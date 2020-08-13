@@ -1,0 +1,12 @@
+var list = ["아이폰","홍성","김해원","이일환",1+6,"김비오","제니","멋쟁이","끝이 없는 이야기"];
+		function sukjae2(p1){
+			//액션
+			//수도코드 psedu code
+			//숫자를 0에서 부터 4까지 
+			//그숫자로 콘솔로그를 찍는다
+			//4가 되면 멈춘다
+			for (var i = 0; i < p1.length; i++){
+				console.log(p1[i]);
+			}
+		}
+		sukjae2(list);
