@@ -1,0 +1,32 @@
+<html>
+<head>
+</head>
+<body>
+
+<p></p>
+<h2>영화 작업</h2>
+
+<div id="div1"></div>
+
+<script>
+
+
+var filmList = ["셔틀콕", "소셜포비아", "살아남은 아이", "피의 연대기", "윤희에게"];
+
+function sukjae3(P1){
+	for(i = 0 ; i < P1.length ; i++){
+	var myPara = document.createElement("p");
+	var myText = document.createTextNode(P1[i]);
+	myPara.appendChild(myText);
+	var myDiv = document.getElementById("div1");
+	myDiv.appendChild(myPara);
+	}
+
+}
+
+sukjae3(filmList);
+
+	
+</script>
+</body>
+</html>
