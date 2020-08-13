@@ -1,0 +1,51 @@
+<html>
+<head>
+</head>
+<body>
+
+<h1>큰글</h1>
+<h2>조금덜큰글</h2>
+
+<p>문단</p>
+
+<div id="div1">분할1</div>
+
+<div id="div2">분할2</div>
+
+<div id="div3">분할3</div>
+
+<div id="div4">분할4</div> 
+
+<script>
+	//DOM document object model
+	//p태그생성
+	var myPara = document.createElement("p");
+	//문자 생성
+	var myText = document.createTextNode("나의글");
+	//p태그 안에 문자 넣기
+	myPara.appendChild(myText);
+	//div1 찾기
+	var myDiv = document.getElementById("div1");
+	//div1 에다가 붙이기
+	myDiv.appendChild(myPara);
+
+
+var list = [1,2,3,4]
+
+//배열을 받아서 p로 표현해 주는 함수
+function sukja3(p1){
+//
+// 액션
+for(i = 0 ; i < p1.length ; i++) {
+	//p문 표현
+	// < todo 여기다가 잘 표현해라
+}
+
+sukja3(list);
+
+</script>
+</body>
+</html>
+
+
+
