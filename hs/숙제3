@@ -1,0 +1,39 @@
+<html>
+<head>
+</head>
+<body>
+
+<h1>tellmebaby</h1>
+<h4>hello world :)</h4>
+
+<p><h6>2020.08.13</h6></p>
+
+<div id="div1"><h1>아래 오늘의 숙제가 표시됩니다.</h1></div>
+
+<div id="div2"><h1>서비스 지역이 아닙니다.</h1></div>
+
+<div id="div3"><h1>서비스 지역이 아닙니다.</h1></div>
+
+<div id="div4"><h1>서비스 지역이 아닙니다.ㅋㅋ</h1></div>
+
+<script>
+	//이곳배열에 하루하루 진도를 입력하면 차례대로 표시됩니다
+	var list = ["day1 함수","day2 배열","day3 자바를 이용해 홈페이지 만들어보기"];
+
+	function historyList (p1){
+		for (i=0;i<p1.length;i++){
+			//pl.length고마워
+			var myPara = document.createElement("p");
+			//나의 내용을 알아서 증가되는 배열에서 가져오겠어	
+			var myText = document.createTextNode(p1[i]);
+			myPara.appendChild(myText);
+			var myDiv = document.getElementById("div1");
+			myDiv.appendChild(myPara);
+		}
+
+	}
+	historyList (list);
+
+</script>
+</body>
+</html>
