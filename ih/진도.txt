@@ -47,12 +47,7 @@ https://www.w3schools.com/js/js_htmldom_css.asp
 https://www.w3schools.com/html/html_tables.asp
 
 5. 숙제 - 배열을 받아서 그안에 있는것들을 표로 표현
-
-
-
-
-
-Day 4
+배열을 받아서 그안에 있는것들을 P로 표현
 
 
 
