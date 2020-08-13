@@ -1,0 +1,12 @@
+var guitar = ["Fender", "Gibson", "Guild", "Epiphone", "Hofner"];
+var level = ["a", "b", "c", "d", "e", "f", "g"]
+
+function EG(P1){
+for(i=0; i<P1.length ; i++){
+console.log(P1[i]);	
+}
+
+}
+
+EG(guitar);
+EG(level);
