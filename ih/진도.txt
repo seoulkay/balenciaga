@@ -50,4 +50,14 @@ https://www.w3schools.com/html/html_tables.asp
 배열을 받아서 그안에 있는것들을 P로 표현
 
 
+Day 4
+
+1. EC2 아마존 웹서비스 클라우드
+2. 웹서버 아파치 설치
+2. ssh 
+3. sftp
+4. <img src="/aa.jpg" width="400"/>
+5. 포트 열기 
+
+숙제 - 웹 서비스를 귀엽게 만들어서 깃헙에 주소를 올려주세요.
 
