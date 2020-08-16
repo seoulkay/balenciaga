@@ -61,3 +61,24 @@ Day 4
 
 숙제 - 웹 서비스를 귀엽게 만들어서 깃헙에 주소를 올려주세요.
 
+
+Day 5 
+
+Java
+https://www.tutorialspoint.com/compile_java_online.php
+
+*. 데이터란.
+*. 왜 자바(백엔드)가 필요한가
+*. 프론트 엔드 개발자 / 백엔드 개발자
+
+1. System.out.println();
+2. 변수 String, int;
+3. 조건 if else
+4. 반복문 for
+5. 배열 array
+6. 함수 function
+
+숙제 이클립스 설치 
+    //숙제는 자바 구구단 함수;
+    //2단계 숙제는 단수를 받아서 그단까지 하는 구구단 함수;
+https://www.eclipse.org/downloads/
