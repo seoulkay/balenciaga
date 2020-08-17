@@ -82,3 +82,23 @@ https://www.tutorialspoint.com/compile_java_online.php
     //숙제는 자바 구구단 함수;
     //2단계 숙제는 단수를 받아서 그단까지 하는 구구단 함수;
 https://www.eclipse.org/downloads/
+
+
+Day 6
+
+왜 컴퓨터는 이진수인가. 이진수 binary -> bit
+반도체 semi conductor 
+voltage 서킷
+디지털
+
+자바 컴파일을 해줘야 하는 언어
+자바 스크립트 컴파일은 안해줘도 되는 언어 JIT just in time
+클래스 - 바이너리 binary
+
+객체 지향 프로그래밍 OOP object oriented programming
+
+1. 객체란 - 속성과 동작 fields / methods
+2. 생성자, 게터 세터
+3. 객체의 생성
+
+숙제 	자동자 객체를 자바로 작성해 보기.
