@@ -36,7 +36,7 @@ public class HelloWorld{
      }
      
     //접근자_시작할때 메모리에 올린다_리턴은 숫자로한다_너의함수이름_메개변수 두개
-    public static int gugudan(int 100){
+    public static int gugudan(int a, int b){
         return a+b;
     }
    
