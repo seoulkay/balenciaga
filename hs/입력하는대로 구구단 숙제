@@ -1,0 +1,16 @@
+public class HelloWorld{
+
+     public static void main(String []args){
+        System.out.println("Hello World");
+        
+        //0다음에 보고자 하는 구구단의 숫자를 입력하면 출력됩니다.
+        int[] list = {0,2};
+        
+        for (int i = 1 ; i < list.length ; i++){
+            for (int j = 1 ; j <= 9 ; j++)
+            System.out.println( list[i] + "*" + j + "=" + list[i]*j );
+            
+        }
+            System.out.println();
+     }
+}
