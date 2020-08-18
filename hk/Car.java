@@ -14,7 +14,7 @@ public class Car {
 		System.out.println("모델:"+model);
 		System.out.println("브랜드:"+brand);
 		System.out.println("색:"+color);
-		System.out.println("사진:"+image);
+		System.out.println("사진:");
 	}
 	
 	public void AccelCar(int p1) {
