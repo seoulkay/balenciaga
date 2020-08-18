@@ -102,3 +102,19 @@ voltage 서킷
 3. 객체의 생성
 
 숙제 	자동자 객체를 자바로 작성해 보기.
+
+
+
+Day 7 객체 심화
+
+1. 자바의 배열
+ArrayList<Reply> newReplies = new ArrayList<Reply>();
+
+1. 게시판! 데이터
+	- page 객체
+	- reply 객체
+	- pageUse 실행을 하자
+
+2. 생성자 constructor
+
+숙제 페이지와 댓글을 받아서 뎃글 더한 페이지를 리턴하는 함수.
