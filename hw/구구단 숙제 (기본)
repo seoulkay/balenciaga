@@ -8,4 +8,5 @@ public class HelloWorld{
             for(int l = 1 ; l <11 ; l++)
             System.out.println(i*l);
         } 
-        String jool = "ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ";
+    }
+}
