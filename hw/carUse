@@ -14,5 +14,13 @@ public class carUse {
 	System.out.println(sonata.color);
   	System.out.println(sonata.buildTime);
   	System.out.println(sonata.motorNumber);
+	
+	sonata.start();
+	sonata.accelerate();
+	sonata.left();
+	sonata.decelerate();
+	sonata.stop();
+	sonata.quit();
+	
 	}
 }
