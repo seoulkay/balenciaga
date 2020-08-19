@@ -26,4 +26,7 @@ public class car {
 	public void stop() {
 		System.out.println("멈춘다.");
 	}	
+	public void quit() {
+		System.out.println("시동을 끈다.");		
+	}
 }
