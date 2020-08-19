@@ -1,0 +1,38 @@
+package pack1;
+
+public class caruse {
+	public static void main(String[] args) {
+		repairlist mycar = new repairlist();
+		mycar.name = "붕붕이";
+		mycar.km = 144000;
+		mycar.rkm = 15000;
+		mycar.year = 15;
+		mycar.car = "비틀";
+		
+		repairlist guest1 = new repairlist();
+		guest1.name = "가렌";
+		guest1.km = 304500;
+		guest1.rkm = 15000;
+		guest1.year = 5;
+		guest1.car = "소나타";
+		
+		System.out.println(mycar.car);
+		System.out.println(mycar.km);
+		System.out.println(mycar.rkm);
+		
+		mycar.distanceDriven(8000);
+		System.out.println(mycar.km);
+		mycar.repairRequest(8000);
+		System.out.println(mycar.rkm);
+		
+		System.out.println(guest1.car);
+		System.out.println(guest1.km);
+		System.out.println(guest1.rkm);
+		
+		guest1.distanceDriven(20000);
+		System.out.println(guest1.km);
+		guest1.repairRequest(20000);
+		System.out.println(guest1.rkm);
+		guest1.broken();
+	}
+}
