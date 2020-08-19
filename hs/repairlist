@@ -1,0 +1,27 @@
+package pack1;
+
+public class repairlist {
+
+		//속성 fields
+		String name;
+		String car;
+		int km;
+		int year;
+		int rkm;
+		
+		//동작 methods
+		public void distanceDriven(int p2) {
+			System.out.println("새로운 주행거리");
+			this.km = this.km + p2;
+			
+		}
+		public void repairRequest(int p1) {
+			System.out.println("엔진오일 교환까지 남은 거리");
+			this.rkm = this.rkm - p1;
+			
+		}
+		public void broken( ) {
+			System.out.println("고장났습니다.");
+			
+		}
+}
