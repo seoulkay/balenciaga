@@ -122,6 +122,14 @@ ArrayList<Reply> newReplies = new ArrayList<Reply>();
 
 Day 8 레스트 서비스 RESTful service
 
+Day 8 레스트 서비스 RESTful service
+
+1. 프래임 워크
+- CSS - 부트스트랩 bootstrap < 요즘 JS들이 좋아서 잘 안쓰는 경우가 있다.
+- JS - 리엑트, 제이쿼리 react / jquery
+- Java - 스프링 spring
+
+
 1. 이클립스 이이 Eclipse EE
 2. 스프링 프레임 워크 Spring boot 
 3. 톰캣 Tomcat
