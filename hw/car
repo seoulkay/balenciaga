@@ -1,0 +1,26 @@
+package pack1;
+
+public class car {
+	String manufacturerer;
+	String codeName;
+	String color;
+	int buildTime;
+	int motorNumber;
+	
+	
+	public void start() {
+		System.out.println("시동을 건다.");
+	}
+	public void accelerate() {
+		System.out.println("가속한다.");
+	}
+	public void decelerate() {
+		System.out.println("감속한다.");
+	}
+	public void left() {
+		System.out.println("왼쪽으로 간다.");
+	}
+	public void right() {
+		System.out.println("오른쪽으로 간다.");
+	}
+}
