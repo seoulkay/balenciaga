@@ -5,12 +5,14 @@ public class carUse {
 	car sonata = new car();
 	sonata.manufacturerer = "현대";
 	sonata.codeName = "소나타";
+	sonata.color = "빨간색";
 	sonata.buildTime = 200819;
 	sonata.motorNumber = 20;
 		
 	System.out.println(sonata.manufacturer);
-  System.out.println(sonata.codeName);
-  System.out.println(sonata.buildTime);
-  System.out.println(sonata.motorNumber);
+  	System.out.println(sonata.codeName);
+	System.out.println(sonata.color);
+  	System.out.println(sonata.buildTime);
+  	System.out.println(sonata.motorNumber);
 	}
 }
