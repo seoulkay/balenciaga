@@ -122,8 +122,6 @@ ArrayList<Reply> newReplies = new ArrayList<Reply>();
 
 Day 8 레스트 서비스 RESTful service
 
-Day 8 레스트 서비스 RESTful service
-
 1. 프래임 워크
 - CSS - 부트스트랩 bootstrap < 요즘 JS들이 좋아서 잘 안쓰는 경우가 있다.
 - JS - 리엑트, 제이쿼리 react / jquery
@@ -148,8 +146,8 @@ Day 9
 1.부트 스트랩 / 제이쿼리 - Bootstrap jquery
 그레이스케일
 https://startbootstrap.com/themes/grayscale/
-
 https://startbootstrap.com/
 
 부트스트랩은 빠르다! 모바일 친화적이다!
 
+숙제 감성 브트스트랩 페이지를 내 클라우드에 올리자.
