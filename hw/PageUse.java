@@ -21,8 +21,8 @@ public class PageUse {
 		myPages.add(myPage1);
 				
 		for(int i = 0 ; i < myPages.size(); i++) {
-			System.out.println(myPages.get(i).title);
-			System.out.println(myPages.get(i).desc);
+			System.out.println(myPages.get(i).artistTitle);
+			System.out.println(myPages.get(i).releaseDate);
 			for(int j = 0 ; j < myPages.get(i).getRepliesNumber(); j++) {
 					System.out.println("  "+myPages.get(i).replies.get(j).content);		
 					}
