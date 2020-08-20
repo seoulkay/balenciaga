@@ -5,4 +5,9 @@ public class Reply {
 	String content;
 	String date;
 	
+	public Reply(String userName, String content, String date) {
+		this.userName = userName;
+		this.content = content;
+		this.date = date;
+	}
 }
