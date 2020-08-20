@@ -9,24 +9,30 @@ public class Page {
 		String desc;
 		int hp;
 		int mp;
-		int ss;
+		
 		
 		ArrayList<Reply> replies = new ArrayList<Reply>();
 		
 		public int getRepliesNumber() {
 			return replies.size();
 		}
-		// int sum = 0
-		// public int sScore() {
-		//	System.out.println()
 		
+		public int getRepliesAvr() {
+			int result = 0;
+			for (int i = 0 ; i < replies.size(); i++) {
+				result = replies.get(i).ss+result;
+			}
+			result = result/replies.size();
+			return result;
+			
+		}
 		
-		public Page(String title, String engTitle, String desc, int hp, int mp, int ss) {
+		public Page(String title, String engTitle, String desc, int hp, int mp) {
 			this.title = title;
 			this.engTitle = engTitle;
 			this.desc = desc;
 			this.hp = hp;
 			this.mp = mp;
-			this.ss = ss;
+			
 		}
 }
