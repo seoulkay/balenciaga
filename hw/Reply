@@ -1,0 +1,8 @@
+package pack3;
+
+public class Reply {
+	String userName;
+	String content;
+	String date;
+	
+}
