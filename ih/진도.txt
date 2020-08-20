@@ -149,5 +149,7 @@ https://startbootstrap.com/themes/grayscale/
 https://startbootstrap.com/
 
 부트스트랩은 빠르다! 모바일 친화적이다!
+2. DNS 도메인 사기
+https://domain.gabia.com/regist/regist_step1
 
 숙제 감성 브트스트랩 페이지를 내 클라우드에 올리자.
