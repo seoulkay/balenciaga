@@ -141,3 +141,15 @@ http://json.parser.online.fr/
 6. 레스트 서비스!!!! RESTful한 서비스!
 
 숙제 댓글 객체에 별점 필드를 추가하고, 페이지에 댓글 별점 평균을 내는 메소드 추가.
+
+
+Day 9
+
+1.부트 스트랩 / 제이쿼리 - Bootstrap jquery
+그레이스케일
+https://startbootstrap.com/themes/grayscale/
+
+https://startbootstrap.com/
+
+부트스트랩은 빠르다! 모바일 친화적이다!
+
