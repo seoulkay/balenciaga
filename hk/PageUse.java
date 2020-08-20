@@ -56,7 +56,7 @@ public class PageUse {
 			for(int j = 0; j<myPages.get(i).replies.size();j++) {
 				System.out.println("       "+myPages.get(i).replies.get(j).id+"   "+myPages.get(i).replies.get(j).content+"   "+myPages.get(i).replies.get(j).date);
 			}
-			System.out.println();
+			System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 			
 		}
 
