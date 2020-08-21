@@ -4,10 +4,13 @@ public class Reply {
 	String userName;
 	String content;
 	String date;
+	int starPoint;
 	
-	public Reply(String userName, String content, String date) {
+	//생성자 
+	public Reply(String userName, String content, String date, int starPoint) {
 		this.userName = userName;
 		this.content = content;
 		this.date = date;
+		this.starPoint = starPoint;
 	}
 }
