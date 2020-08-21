@@ -28,6 +28,8 @@ public class PageUse {
 			System.out.println("앨범 정보" + "  " + myPages.get(i).desc);
 			System.out.println("재생 횟수" + "  " + myPages.get(i).playCount);
 			System.out.println("좋아요" + "  " + myPages.get(i).likeCount);
+			//아래에 starPoint 평균을 표시하고 싶은데 방법을 모르겠음....
+			System.out.println("유저평점" + "  " + myPages.get(i).replies.get(j/).starPoint);
 			
 			for(int j = 0 ; j < myPages.get(i).getRepliesNumber(); j++) {
 					System.out.println("  " + myPages.get(i).replies.get(j).userName + "  " + myPages.get(i).replies.get(j).content+ "  " + myPages.get(i).replies.get(j).date+ "  " + myPages.get(i).replies.get(j).starPoint + "점");		
