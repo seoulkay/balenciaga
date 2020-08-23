@@ -154,3 +154,15 @@ https://domain.gabia.com/regist/regist_step1
 
 숙제 감성 브트스트랩 페이지를 만들자!
 내 클라우드에 올리자. <- next time
+
+
+
+Day 10 CRUD database
+
+1. 왜 데이터 베이스
+- 퍼미션
+- 트렌젝션
+
+2. JPA hibernate 하이버네이트
+
+
