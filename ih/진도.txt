@@ -165,4 +165,5 @@ Day 10 CRUD database
 
 2. JPA hibernate 하이버네이트
 
+숙제 이메일을 받아보자.
 
