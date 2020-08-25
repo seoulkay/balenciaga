@@ -173,6 +173,9 @@ Day 11 CR
 Mysql workbench
 java -jar 
 
+데이터베이스 /테이블/ 뷰 /펑션 / 스토어프로시져 /
+unique / auto increment / not null / 
+
 숙제 CR Complete
 
 
