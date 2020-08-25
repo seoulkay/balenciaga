@@ -108,6 +108,41 @@
                 </div>
             </div>
         </section>
+         <!--게시판 시작-->
+         <section>
+            <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+                <div class="col-lg-8 mx-auto">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">번호</th>
+                          <th scope="col">글쓴이</th>
+                          <th scope="col">내용</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tbody">
+                      </tbody>
+                    </table>
+                    <form id="replyForm">
+                      <div class="form-group">
+                        <label>내용</label>
+                        <input type="text" class="form-control" id="content">
+                      </div>
+                      <div class="form-group">
+                        <label>글쓴이</label>
+                        <input type="text" class="form-control" id="writer">
+                      </div>
+                        <div class="form-group">
+                        <label>패스워드</label>
+                        <input type="password" class="form-control" id="password">
+                      </div>
+                    </form>
+
+                    <button class="btn btn-primary" id="replySubmit">제출</button>
+                </div>
+            </div>
+        </section>
+        <!--게시판 끝-->
         <!-- Signup-->
         <section class="signup-section" id="signup">
             <div class="container">
@@ -115,9 +150,18 @@
                     <div class="col-md-10 col-lg-8 mx-auto text-center">
                         <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
                         <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
-                        <form class="form-inline d-flex">
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">이메일</th>
+                              </tr>
+                            </thead>
+                            <tbody id="tbody2">
+                            </tbody>
+                          </table>
+                        <form class="form-inline d-flex" id="subscribeForm">
                             <input class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" type="email" placeholder="Enter email address..." />
-                            <button class="btn btn-primary mx-auto" type="submit">Subscribe</button>
+                            <button class="btn btn-primary mx-auto" id="subscribe">Subscribe</button>
                         </form>
                     </div>
                 </div>
@@ -187,8 +231,8 @@
                 $("bg1").removeAttr("padding");
                 $("bg2").removeAttr("padding");
 
-                document.getElementById('bg1').setAttribute('padding','0 rem');
-                document.getElementById('bg2').setAttribute('padding','0 rem');
+                document.getElementById('bg1').setAttribute('padding','0 rem;');
+                document.getElementById('bg2').setAttribute('padding','0 rem;');
 
                 $.get("http://localhost:8080/chara", function(data, status){
                 for(var i = 0; i<data.length; i++){
@@ -216,7 +260,69 @@
                         }
                     }
                 });
-            });          
+            });
+
+            $("#replySubmit").click(function(){
+                       var formData = {
+                        "content":$("#content").val() , 
+                        "writer":$("#writer").val(), 
+                        "password":$("#password").val()
+                        };
+
+                       $.ajax({
+                        url:'http://localhost:8080/reply',
+                        type:'post',
+                        contentType: 'application/json',
+                        data:JSON.stringify(formData),
+                        success:function(data){
+                        console.log("성공");
+                        //폼을 리셋하고
+                        $('#replyForm')[0].reset();
+                        //리플라이를 다시 불러오쟈
+                        getReply();
+                    }
+                })
+            });
+
+
+            function getReply(){
+                $.get("http://localhost:8080/reply", function(data, status){
+                for(var i = 0 ; i < data.length ; i++){
+                      $("#tbody").append("<tr><td>"+data[i].id+"</td><td>"+data[i].writer+"</td><td>"+data[i].content+"</td></tr>");        
+                        }
+                    });
+            }
+            
+            getReply();
+
+            $("#subscribe").click(function(){
+                       var formData = {
+                        "inputEmail":$("#inputEmail").val()
+                        };
+
+                       $.ajax({
+                        url:'http://localhost:8080/subscribe',
+                        type:'post',
+                        contentType: 'application/json',
+                        data:JSON.stringify(formData),
+                        success:function(data){
+                        console.log("성공");
+                        //폼을 리셋하고
+                        $('#subscribeForm')[0].reset();
+                        getEmail();
+                    }
+                })
+            });
+
+            function getEmail(){
+                $.get("http://localhost:8080/subscribe", function(data, status){
+                for(var i = 0 ; i < data.length ; i++){
+                      $("#tbody2").append("<tr><td>"+data[i].inputEmail+"</td></tr>");        
+                        }
+                    });
+            }
+            
+            getEmail();      
         </script>
     </body>
 </html>
