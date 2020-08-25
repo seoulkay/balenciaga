@@ -170,5 +170,16 @@ Day 10 CRUD database
 
 Day 11 CR
 
+Mysql workbench
 java -jar 
+
+숙제 CR Complete
+
+
+Day 12 UD
+
+1. FrontEnd 
+2. BackEnd 
+
+숙제 UD코드 고민하고 포트폴리오 페이지 진행 목요일까지
 
