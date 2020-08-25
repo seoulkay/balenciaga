@@ -1,14 +1,26 @@
 package balenciaga_web.rest.controller;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
 
 import balenciaga_web.rest.entity.Chara;
 import balenciaga_web.rest.entity.Info;
 import balenciaga_web.rest.entity.Reply;
+import balenciaga_web.rest.entity.Reply2;
+import balenciaga_web.rest.entity.Subscribe;
+import balenciaga_web.rest.repository.BalenciagaRepository;
+import balenciaga_web.rest.repository.BalenciagaRepository2;
 
 
 @RestController
@@ -50,14 +62,88 @@ public class BalenciagaController {
 		return charaList;
 	}
 	
+	
+	@Autowired
+	  BalenciagaRepository balenciagaRepository;
+	  
+	  @CrossOrigin(origins = "*")
+	  @PostMapping("/reply")
+	  public ResponseEntity<Reply> createTutorial(@RequestBody Reply reply) {
+	    try {
+	      Reply _reply = balenciagaRepository
+	          .save(new Reply(reply.getContent(), reply.getWriter(), reply.getPassword(), true));
+	      System.out.println(reply.getContent());
+	      return new ResponseEntity<>(_reply, HttpStatus.CREATED);
+	    } catch (Exception e) {
+	      return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+	    }
+	  }
+	  
+	  @CrossOrigin(origins = "*")
+	  @GetMapping("/reply")
+	  public ResponseEntity<List<Reply>> getAllTutorials(@RequestParam(required = false) String content) {
+	    try {
+	      List<Reply> replies = new ArrayList<Reply>();
+
+	      if (content == null)
+	    	balenciagaRepository.findAll().forEach(replies::add);
+	      else
+	    	balenciagaRepository.findByContentContaining(content).forEach(replies::add);
+
+	      if (replies.isEmpty()) {
+	        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+	      }
+
+	      return new ResponseEntity<>(replies, HttpStatus.OK);
+	    } catch (Exception e) {
+	      return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+	    }
+	  }
+	  
+	  @Autowired
+	  BalenciagaRepository2 balenciagaRepository2;
+	  
+	  @CrossOrigin(origins = "*")
+	  @PostMapping("/subscribe")
+	  public ResponseEntity<Subscribe> createTutorial2(@RequestBody Subscribe subscribe) {
+	    try {
+	    	Subscribe _subscribe = balenciagaRepository2.save(new Subscribe(subscribe.getInputEmail()));
+	      System.out.println(subscribe.getInputEmail());
+	      return new ResponseEntity<>(_subscribe, HttpStatus.CREATED);
+	    } catch (Exception e) {
+	      return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+	    }
+	  }
+	  
+	  @CrossOrigin(origins = "*")
+	  @GetMapping("/subscribe")
+	  public ResponseEntity<List<Subscribe>> getAllTutorials2(@RequestParam(required = false) String inputEmail) {
+	    try {
+	      List<Subscribe> subscribes = new ArrayList<Subscribe>();
+
+	      if (inputEmail == null)
+	    	balenciagaRepository2.findAll().forEach(subscribes::add);
+	      else
+	    	balenciagaRepository2.findByInputEmail(inputEmail).forEach(subscribes::add);
+
+	      if (subscribes.isEmpty()) {
+	        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+	      }
+
+	      return new ResponseEntity<>(subscribes, HttpStatus.OK);
+	    } catch (Exception e) {
+	      return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+	    }
+	  }
+	
 	@CrossOrigin(origins = "*")
 	@GetMapping("chara/reply")
 	public float getReply(){
-		Reply r1 = new Reply("삼hatchery","이친구는 몇달연속 1티어인데 노잼이라 별 문제가 안됨 ㅋㅋㅋㅋㅋ", "2020-04-18",4);
-		Reply r2 = new Reply("트레버","얘 E랑 코그모 E 바꿨으면 좋겠다...", "2020-04-18",5);
-		Reply r3 = new Reply("아쌈","일러스트 깡패 인게 실패", "2020-04-18",4);
+		Reply2 r1 = new Reply2("삼hatchery","이친구는 몇달연속 1티어인데 노잼이라 별 문제가 안됨 ㅋㅋㅋㅋㅋ", "2020-04-18",4);
+		Reply2 r2 = new Reply2("트레버","얘 E랑 코그모 E 바꿨으면 좋겠다...", "2020-04-18",5);
+		Reply2 r3 = new Reply2("아쌈","일러스트 깡패 인게 실패", "2020-04-18",4);
 		
-		ArrayList<Reply> replyList = new ArrayList<Reply>();
+		ArrayList<Reply2> replyList = new ArrayList<Reply2>();
 		
 		replyList.add(r1);
 		replyList.add(r2);
