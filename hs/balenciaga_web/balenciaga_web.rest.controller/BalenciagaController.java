@@ -1,17 +1,25 @@
 package balenciaga_web.rest.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import javax.persistence.*;
 
 import balenciaga_web.rest.entity.Chara;
 import balenciaga_web.rest.entity.Reply;
@@ -120,5 +128,81 @@ public class BalenciagaController {
 	      return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 	    }
 	  }
-	 
+	  @CrossOrigin(origins = "*")
+	  @GetMapping("/reply/{id}")
+	  public ResponseEntity<Reply> getReplyById(@PathVariable("id") long id) {
+	    Optional<Reply> tutorialData = balenciagaRepository.findById(id);
+
+	    if (tutorialData.isPresent()) {
+	      return new ResponseEntity<>(tutorialData.get(), HttpStatus.OK);
+	    } else {
+	      return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+	    }
+	  }
+
+
+	  @CrossOrigin(origins = "*")
+	  @PutMapping("/reply/{id}")
+	  public ResponseEntity<Reply> updateReply(@PathVariable("id") long id, @RequestBody Reply reply) {
+	    Optional<Reply> oldReply = balenciagaRepository.findById(id);
+
+	    if (oldReply.isPresent()) {
+	      Reply _reply = oldReply.get();
+	      _reply.setContent(reply.getContent()); 
+	      _reply.setWriter(reply.getWriter());
+
+	      Reply oldReplyForPassword = balenciagaRepository.getOne(id);
+	      if(!(oldReplyForPassword.getPassword().equals(reply.getPassword()))) {
+	    	  return new ResponseEntity<>(HttpStatus.UNAUTHORIZED); 
+	      }
+	      return new ResponseEntity<>(balenciagaRepository.save(_reply), HttpStatus.OK);
+	    } else {
+	      return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+	    }
+	  }
+	  
+	  @Transactional
+	  @CrossOrigin(origins = "*")
+	  @DeleteMapping("/reply/{id}")
+	  public ResponseEntity<HttpStatus> deleteReply(@PathVariable("id") long id, @RequestBody Reply reply) {
+	    try {
+
+	    	Reply oldReplyForPassword = balenciagaRepository.getOne(id);
+		      if(!(oldReplyForPassword.getPassword().equals(reply.getPassword()))) {
+		    	  return new ResponseEntity<>(HttpStatus.UNAUTHORIZED); 
+		      }
+
+	    	balenciagaRepository.deleteById(id);
+	      return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+	    } catch (Exception e) {
+	      return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+	    }
+	  }
+
+	  @CrossOrigin(origins = "*")
+	  @DeleteMapping("/replies")
+	  public ResponseEntity<HttpStatus> deleteAllReplies() {
+	    try {
+	      balenciagaRepository.deleteAll();
+	      return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+	    } catch (Exception e) {
+	      return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+	    }
+
+	  }
+
+	  @CrossOrigin(origins = "*")
+	  @GetMapping("/reply/published")
+	  public ResponseEntity<List<Reply>> findByPublished() {
+	    try {
+	      List<Reply> tutorials = balenciagaRepository.findByPublished(true);
+
+	      if (tutorials.isEmpty()) {
+	        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+	      }
+	      return new ResponseEntity<>(tutorials, HttpStatus.OK);
+	    } catch (Exception e) {
+	      return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+	    }
+	  }
 }
