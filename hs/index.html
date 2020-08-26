@@ -134,9 +134,11 @@
                         <label>패스워드</label>
                         <input type="password" class="form-control" id="password">
                       </div>
+                      <input type="hidden" id="id">
                     </form>
-
                     <button class="btn btn-primary" id="replySubmit">제출</button>
+                    <button class="btn btn-primary" id="replyUpdate">수정</button>
+                    <button class="btn btn-primary" id="replyDelete">삭제</button>
                 </div>
             </div>
         </section>
@@ -321,6 +323,112 @@
             }
             
             getEmail();  
+             //read
+            function getReply(){
+                $.get("http://localhost:8080/reply", function(data, status){
+                    //기존 테이블 정보 삭제
+                    $("#tbody").empty();
+                    //데이터 삽입
+                    for(var i = 0 ; i < data.length ; i++){
+                      $("#tbody").append("<tr><td><button onclick=setUpdateform("+data[i].id+",'"+data[i].writer+"','"+data[i].content+ "')>"+data[i].id+"</button></td><td>"+data[i].writer+"</td><td>"+data[i].content+"</td></tr>");        
+                        }
+                    });
+            }
+            
+            //update
+            $("#replyUpdate").click(function(){
+                        //서버에 보낼 데이터 생성 
+                       var formData = {
+                        "content":$("#content").val() , 
+                        "writer":$("#writer").val(), 
+                        "password":$("#password").val()
+                        };
+                        //비동기 호출
+                        //타입 GET / POST
+                       $.ajax({
+                        url:'http://localhost:8080/reply/'+$("#id").val(),
+                        type:'put',
+                        contentType: 'application/json',
+                        data:JSON.stringify(formData),
+                        //콜백
+                        success:function(data){
+                        console.log("수정성공");
+                        //폼을 리셋하고
+                        $('#replyForm')[0].reset();
+                        //리플라이를 다시 불러오쟈
+                        getReply();
+                        setSubmitButton();
+                        },
+                        error: function (ajaxContext) {
+                            alert("수정실패");
+                            $('#replyForm')[0].reset();
+                            getReply();
+                        setSubmitButton();
+                        }
+                })
+            });
+
+             //delete
+            $("#replyDelete").click(function(){
+                        //서버에 보낼 데이터 생성 
+                       var formData = {
+                        "content":$("#content").val() , 
+                        "writer":$("#writer").val(), 
+                        "password":$("#password").val()
+                        };
+                        //비동기 호출
+                        //타입 GET / POST
+                       $.ajax({
+                        url:'http://localhost:8080/reply/'+$("#id").val(),
+                        type:'delete',
+                        contentType: 'application/json',
+                        data:JSON.stringify(formData),
+                        //콜백
+                        success:function(data){
+                        console.log("삭제성공");
+                        //폼을 리셋하고
+                        $('#replyForm')[0].reset();
+                        //리플라이를 다시 불러오쟈
+                        getReply();
+                        setSubmitButton();
+                        },
+                        error: function (ajaxContext) {
+                            alert("수정실패");
+                             $('#replyForm')[0].reset();
+                            getReply();
+                        setSubmitButton();
+                        }
+                })
+            });
+
+
+
+            function setUpdateform(p1,p2,p3){
+                console.log(p1+p2+p3);
+                $("#id").val(p1);
+                $("#writer").val(p2);
+                $("#content").val(p3);
+                setUpdateButton()
+            }
+                
+
+            function setSubmitButton(){
+             $("#replySubmit").show();
+             $("#replyUpdate").hide();
+             $("#replyDelete").hide();
+            }
+            
+
+            function setUpdateButton(){
+             $("#replySubmit").hide();
+             $("#replyUpdate").show();
+             $("#replyDelete").show();
+            }
+
+
+            //처음에 페이지가 실행 되었을때
+            getReply();
+            setSubmitButton();
         </script>
     </body>
 </html>
