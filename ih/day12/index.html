@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Grayscale - Start Bootstrap Theme</title>
+        <title>I am Kay</title>
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
@@ -19,7 +19,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">IamK</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -37,10 +37,9 @@
         <header class="masthead">
             <div class="container d-flex h-100 align-items-center">
                 <div class="mx-auto text-center">
-                    <h1 class="mx-auto my-0 text-uppercase" id="title1">Grayscale</h1>
-                    <h2 class="text-white-50 mx-auto mt-2 mb-5">A free, responsive, one page Bootstrap theme created by Start Bootstrap.</h2>
-                    <a class="btn btn-primary js-scroll-trigger" href="#about">Get Started</a>
-                    <button class="btn btn-primary mx-auto" id="magicButton">매직버튼</button>
+                    <h1 class="mx-auto my-0 text-uppercase" id="title1">I am Kay</h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">Songdo / Tokyo</h2>
+                    <a class="btn btn-primary js-scroll-trigger" href="#about">About</a>
                 </div>
             </div>
         </header>
@@ -49,11 +48,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
-                        <h2 class="text-white mb-4">Built with Bootstrap 4</h2>
+                        <h2 class="text-white mb-4">IT professional and enthusiast</h2>
                         <p class="text-white-50">
-                            Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours right now, simply download the template on
-                            <a href="https://startbootstrap.com/template-overviews/grayscale/">the preview page</a>
-                            . The theme is open source, and you can use it for any purpose, personal or commercial.
+                            Living / Learning Korea and Japan 
                         </p>
                     </div>
                 </div>
@@ -105,7 +102,9 @@
                     </div>
                 </div>
             </div>
+            
         </section>
+      
         <!--게시판 시작-->
         <section>
             <div class="row align-items-center no-gutters mb-4 mb-lg-5">
@@ -139,6 +138,7 @@
                     <button class="btn btn-primary" id="replySubmit">제출</button>
                     <button class="btn btn-primary" id="replyUpdate">수정</button>
                     <button class="btn btn-primary" id="replyDelete">삭제</button>
+                    <button class="btn btn-primary mx-auto" id="magicButton">매직버튼</button>
                 </div>
             </div>
         </section>
@@ -294,7 +294,7 @@
                     $("#tbody").empty();
                     //데이터 삽입
                     for(var i = 0 ; i < data.length ; i++){
-                      $("#tbody").append("<tr><td><button onclick=setUpdateform("+data[i].id+",'"+data[i].writer+"','"+data[i].content+ "')>"+data[i].id+"</button></td><td>"+data[i].writer+"</td><td>"+data[i].content+"</td></tr>");        
+                      $("#tbody").append('<tr><td><button onclick=setUpdateform('+data[i].id+')>'+data[i].id+'</button></td><td id=rw'+data[i].id+'>'+data[i].writer+'</td><td id=rc'+data[i].id+'>'+data[i].content+'</td></tr>');        
                         }
                     });
             }
@@ -327,7 +327,7 @@
                             alert("수정실패");
                             $('#replyForm')[0].reset();
                             getReply();
-                        setSubmitButton();
+                            setSubmitButton();
                         }
                 })
             });
@@ -342,6 +342,8 @@
                         };
                         //비동기 호출
                         //타입 GET / POST
+                        var idnum = $("#id").val();
+                        console.log(idnum);
                        $.ajax({
                         url:'http://localhost:8080/reply/'+$("#id").val(),
                         type:'delete',
@@ -357,7 +359,7 @@
                         setSubmitButton();
                         },
                         error: function (ajaxContext) {
-                            alert("수정실패");
+                            alert("삭제실패");
                              $('#replyForm')[0].reset();
                             getReply();
                         setSubmitButton();
@@ -367,12 +369,12 @@
 
 
 
-            function setUpdateform(p1,p2,p3){
-                console.log(p1+p2+p3);
+            function setUpdateform(p1){
+                console.log(p1);
                 $("#id").val(p1);
-                $("#writer").val(p2);
-                $("#content").val(p3);
-                setUpdateButton()
+                $("#writer").val($("#rw"+p1).text());
+                $("#content").val($("#rc"+p1).text());
+                setUpdateButton();
             }
                 
 
