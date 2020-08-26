@@ -186,3 +186,13 @@ Day 12 UD
 
 숙제 UD코드 고민하고 포트폴리오 페이지 진행 목요일까지
 
+
+day 13 페이지 paging
+
+CSS 구현
+https://getbootstrap.com/docs/4.5/components/pagination/
+
+페이징 JPA 구현
+https://bezkoder.com/spring-boot-pagination-filter-jpa-pageable/
+
+숙제 포트폴리오 페이지 complete
