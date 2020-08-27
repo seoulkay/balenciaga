@@ -202,12 +202,13 @@ https://bezkoder.com/spring-boot-pagination-filter-jpa-pageable/
 
 숙제 포트폴리오 페이지 complete
 
-day 14 프로젝트 완성
-
 *Maven build!
 -clean
 -install
 -Target 확인
+
+localhost -> 너의 도메인으로
+8080열기
 
 1. sftp
 put -r /greyscale
