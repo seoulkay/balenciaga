@@ -218,7 +218,7 @@ sudo cp -r /asset /var/www/html
 
 3. run java jar
 java -jar balenciaga-web
-
+nohup java -jar balenciaga_web-1.0.0.jar &
 
 숙제 현재 패이지의 백오피스를 만들어 보자 backend.html
 https://startbootstrap.com/themes/sb-admin-2/
