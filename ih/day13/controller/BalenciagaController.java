@@ -93,7 +93,7 @@ public class BalenciagaController {
 	    	  pageReplies = balenciagaRepository.findByOrderByIdDesc(paging);
 	      }
 	      else {
-	    	  pageReplies = balenciagaRepository.findByOrderByIdDescByContentContaining(content, paging);
+	    	  pageReplies = balenciagaRepository.findByContentContaining(content, paging);
 	      }
 	      
 	      replies = pageReplies.getContent();
