@@ -13,7 +13,7 @@ public interface BalenciagaRepository extends JpaRepository<Reply, Long> {
 	  Page<Reply> findByOrderByIdDesc(Pageable pageable);
 	  
 	  Page<Reply> findByPublished(boolean published,  Pageable pageable);
-	  Page<Reply> findByOrderByIdDescByContentContaining(String content,  Pageable pageable);
+	  Page<Reply> findByContentContaining(String content,  Pageable pageable);
 	  Optional<Reply> findById(long id);
 	  Optional<Reply> deleteById(long id);
 	}
