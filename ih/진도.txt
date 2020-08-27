@@ -201,3 +201,23 @@ https://bezkoder.com/spring-boot-pagination-filter-jpa-pageable/
 - 보너스 -> 큐 / 스택 queue / stack
 
 숙제 포트폴리오 페이지 complete
+
+day 14 프로젝트 완성
+
+*Maven build!
+-clean
+-install
+-Target 확인
+
+1. sftp
+put -r /greyscale
+
+2. ssh
+sudo cp -r /asset /var/www/html
+
+3. run java jar
+java -jar balenciaga-web
+
+
+숙제 현재 패이지의 백오피스를 만들어 보자 backend.html
+https://startbootstrap.com/themes/sb-admin-2/
