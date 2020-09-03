@@ -1,0 +1,16 @@
+<html>
+	<haed>
+	</haed>
+	<body>
+	</body>
+	<script>
+		var obj = {
+			id: "myid",
+			name: "myname"
+		}
+		// for문의 다른 형태
+		for(var attr in obj) {
+			console.log(attr);
+		}
+	</script>
+</html>
