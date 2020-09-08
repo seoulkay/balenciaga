@@ -57,15 +57,22 @@
                         </p>
                     </div>
                 </div>
-                <img class="img-fluid" src="assets/img/ipad.png" alt="" />
+                <img class="img-fluid" src="assets/img/IMG_6347.jpg" alt="" />
             </div>
         </section>
+        <!-- youtube-->
+         <Section>
+            <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+                <div class="col-lg-8 mx-auto" id="player"></div>
+                <div class="col-lg-8 mx-auto" id="player2"></div>
+            </div>
+        </Section>
         <!-- Projects-->
         <section class="projects-section bg-light" id="projects">
             <div class="container" id="pMother">
                 <!-- Featured Project Row-->
                 <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/bg-masthead.jpg" alt="" /></div>
+                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/IMG_6953.jpg" alt="" /></div>
                     <div class="col-xl-4 col-lg-5">
                         <div class="featured-text text-center text-lg-left" id="showLine">
                             <h4>Shoreline</h4>
@@ -121,6 +128,13 @@
                       <tbody id="tbody">
                       </tbody>
                     </table>
+                      <!--페이징 시작-->
+                    <nav aria-label="Page navigation example">
+                        <p>총 글수 : <strong id="pagerTotal"></strong> </p>
+                      <ul class="pagination justify-content-center" id="pagerReply">
+                      </ul>
+                    </nav>
+                    <!--페이징 끝-->
                     <form id="replyForm">
                       <div class="form-group">
                         <label>내용</label>
@@ -220,11 +234,11 @@
         <script src="js/scripts.js"></script>
         <script>
             $("#startBoot").empty().append("어제보단 오늘");
-            $("#title1").empty().append("Tell me Baby");
+            $("#title1").empty().append("SEOUL");
             $("#titles").empty().append("다 때가 있는법이지, 라면불을 끌 때도, 쓰레기 봉투를 버릴 때도, TV를 끌 때도 다 때가 있는법이야.");
-            $("#builtWith").empty().append("아이패드 갖고싶다.");
-            $("#builtDesc").empty().append("옛날에 산게 하나 있어, 잘썼지, 욕심같진 않은데 그냥 화면도 커지고 훨씬훨씬더 빨라지고 막상 사려니 안쓸꺼 같고 고민만 하자니 새로운 모델이 계속나와, 아이패드 갖고싶다. 또 새로운 모델이 나오기전에");
-            $("#showLine").empty().append("관악산"+"입구에 가기도 전에 숨이차다. 생각 보다 높아서 놀랄꺼다. 내가 보통 이란 생각을 버리게 된다. 내려오면 부추삼겹살을 먹어야 한다. 꼭이다?");
+            $("#builtWith").empty().append("올림픽보고싶다.");
+            $("#builtDesc").empty().append("올림픽이 취소라니, 믿기지 않는다.");
+            $("#showLine").empty().append("다시 돌아가긴 힘든걸까.");
             $("#address").empty().append("292513 storm");
             $("#emaill").empty().append("tellmebaby407@gmail.com");
             $("#phonee").empty().append("010-****-****");
@@ -234,12 +248,12 @@
             $("#magicButton").click(function(){
 
 
-                $.get("http://localhost:8080/chara", function(data, status){
+                $.get("http://www.tellmebaby.shop:8080/chara", function(data, status){
                     for(var i = 0 ; i < data.length ; i++){
                         //첫번째 와 두번째 캐릭터
                         if(i < 2){
                             $("#p"+(i+1)).find("h4").empty().append(data[i].name);
-                            $("#p"+(i+1)).find("img").attr("src", "http://localhost:8080/"+data[i].img);
+                            $("#p"+(i+1)).find("img").attr("src", "http://www.tellmebaby.shop:8080/"+data[i].img);
                             $("#p"+(i+1)).find("p").empty().append(data[i].desc);
                         //세번째 부터는 여기를 써라.
                         } else {
@@ -247,13 +261,13 @@
                                 //p1카피
                                 $("#p1").clone().attr("id", "p"+(i+1)).appendTo("#pMother");
                                 $("#p"+(i+1)).find("h4").empty().append(data[i].name);
-                                $("#p"+(i+1)).find("img").attr("src", "http://localhost:8080/"+data[i].img);
+                                $("#p"+(i+1)).find("img").attr("src", "http://www.tellmebaby.shop:8080/"+data[i].img);
                                 $("#p"+(i+1)).find("p").empty().append(data[i].desc);
                             }else{
                                 //p2카피
                                 $("#p2").clone().attr("id", "p"+(i+1)).appendTo("#pMother");
                                 $("#p"+(i+1)).find("h4").empty().append(data[i].name);
-                                $("#p"+(i+1)).find("img").attr("src", "http://localhost:8080/"+data[i].img);
+                                $("#p"+(i+1)).find("img").attr("src", "http://www.tellmebaby.shop:8080/"+data[i].img);
                                 $("#p"+(i+1)).find("p").empty().append(data[i].desc);
                             }
                         }
@@ -261,7 +275,29 @@
                 });
 
             });
-                        $("#replySubmit").click(function(){
+
+            //Subscribe Create
+             $("#subscribe").click(function(){
+                                   var formData = {
+                                    "inputEmail":$("#inputEmail").val()
+                                    };
+
+                                   $.ajax({
+                                    url:'http://www.tellmebaby.shop:8080/subscribe',
+                                    type:'post',
+                                    contentType: 'application/json',
+                                    data:JSON.stringify(formData),
+                                    success:function(data){
+                                    console.log("성공");
+                                    //폼을 리셋하고
+                                    $('#subscribeForm')[0].reset();
+                                    getEmail();
+                                }
+                            })
+                        });
+
+             //create
+              $("#replySubmit").click(function(){
                        var formData = {
                         "content":$("#content").val() , 
                         "writer":$("#writer").val(), 
@@ -269,7 +305,7 @@
                         };
 
                        $.ajax({
-                        url:'http://localhost:8080/reply',
+                        url:'http://www.tellmebaby.shop:8080/reply',
                         type:'post',
                         contentType: 'application/json',
                         data:JSON.stringify(formData),
@@ -279,63 +315,62 @@
                         $('#replyForm')[0].reset();
                         //리플라이를 다시 불러오쟈
                         getReply();
+                        setSubmitButton();
                     }
                 })
             });
 
-
+            //read
             function getReply(){
-                $.get("http://localhost:8080/reply", function(data, status){
-                for(var i = 0 ; i < data.length ; i++){
-                      $("#tbody").append("<tr><td>"+data[i].id+"</td><td>"+data[i].writer+"</td><td>"+data[i].content+"</td></tr>");        
-                        }
-                    });
-            }
-            
-            getReply();
-
-
-                        $("#subscribe").click(function(){
-                       var formData = {
-                        "inputEmail":$("#inputEmail").val()
-                        };
-
-                       $.ajax({
-                        url:'http://localhost:8080/subscribe',
-                        type:'post',
-                        contentType: 'application/json',
-                        data:JSON.stringify(formData),
-                        success:function(data){
-                        console.log("성공");
-                        //폼을 리셋하고
-                        $('#subscribeForm')[0].reset();
-                        getEmail();
-                    }
-                })
-            });
-
-            function getEmail(){
-                $.get("http://localhost:8080/subscribe", function(data, status){
-                for(var i = 0 ; i < data.length ; i++){
-                      $("#tbody2").append("<tr><td>"+data[i].inputEmail+"</td></tr>");        
-                        }
-                    });
-            }
-            
-            getEmail();  
-             //read
-            function getReply(){
-                $.get("http://localhost:8080/reply", function(data, status){
+                $.get("http://www.tellmebaby.shop:8080/reply", function(data, status){
                     //기존 테이블 정보 삭제
                     $("#tbody").empty();
                     //데이터 삽입
-                    for(var i = 0 ; i < data.length ; i++){
-                      $("#tbody").append("<tr><td><button onclick=setUpdateform("+data[i].id+",'"+data[i].writer+"','"+data[i].content+ "')>"+data[i].id+"</button></td><td>"+data[i].writer+"</td><td>"+data[i].content+"</td></tr>");        
+                    for(var i = 0 ; i < data.replies.length ; i++){
+                        //페이징 추가
+                      $("#tbody").append('<tr><td><button onclick=setUpdateform('+data.replies[i].id+')>'+data.replies[i].id+'</button></td><td id=rw'+data.replies[i].id+'>'+data.replies[i].writer+'</td><td id=rc'+data.replies[i].id+'>'+data.replies[i].content+'</td></tr>');        
                         }
+
+            //페이징 버튼 추가 #pagerReply
+                $("#pagerTotal").empty().append(data.totalItems);
+                //<li class="page-item"><a class="page-link" href="/reply?size=3%page=1">1</a></li>
+                $("#pagerReply").empty();
+                    for(var i = 0 ; i < data.totalPages ; i++){
+                        if(data.currentPage != i){
+                            $("#pagerReply").append('<li class="page-item"><button class="page-link" onclick=getReplyPage('+i+')>'+(i+1)+'</button></li>');
+                        }else{
+                             $("#pagerReply").append('<li class="page-item active"><button class="page-link" onclick=getReplyPage('+i+')>'+(i+1)+'</button></li>');
+                        }
+                    }
                     });
             }
             
-            //update
+            //read with Page
+            function getReplyPage(pageNumber){
+                $.get("http://www.tellmebaby.shop:8080/reply?page="+pageNumber, function(data, status){
+                    //기존 테이블 정보 삭제
+                    $("#tbody").empty();
+                    //데이터 삽입
+                    for(var i = 0 ; i < data.replies.length ; i++){
+                        //페이징 추가
+                      $("#tbody").append('<tr><td><button onclick=setUpdateform('+data.replies[i].id+')>'+data.replies[i].id+'</button></td><td id=rw'+data.replies[i].id+'>'+data.replies[i].writer+'</td><td id=rc'+data.replies[i].id+'>'+data.replies[i].content+'</td></tr>');        
+                        }
+
+                //페이징 버튼 추가 #pagerReply
+                $("#pagerTotal").empty().append(data.totalItems);
+                //<li class="page-item"><a class="page-link" href="/reply?size=3%page=1">1</a></li>
+                $("#pagerReply").empty();
+                    for(var i = 0 ; i < data.totalPages ; i++){
+                        if(data.currentPage != i){
+                            $("#pagerReply").append('<li class="page-item"><button class="page-link" onclick=getReplyPage('+i+')>'+(i+1)+'</button></li>');
+                        }else{
+                             $("#pagerReply").append('<li class="page-item active"><button class="page-link" onclick=getReplyPage('+i+')>'+(i+1)+'</button></li>');
+                        }
+                    }
+                });
+            }
+
+//update
             $("#replyUpdate").click(function(){
                         //서버에 보낼 데이터 생성 
                        var formData = {
@@ -346,7 +381,7 @@
                         //비동기 호출
                         //타입 GET / POST
                        $.ajax({
-                        url:'http://localhost:8080/reply/'+$("#id").val(),
+                        url:'http://www.tellmebaby.shop:8080/reply/'+$("#id").val(),
                         type:'put',
                         contentType: 'application/json',
                         data:JSON.stringify(formData),
@@ -363,7 +398,7 @@
                             alert("수정실패");
                             $('#replyForm')[0].reset();
                             getReply();
-                        setSubmitButton();
+                            setSubmitButton();
                         }
                 })
             });
@@ -378,8 +413,10 @@
                         };
                         //비동기 호출
                         //타입 GET / POST
+                        var idnum = $("#id").val();
+                        console.log(idnum);
                        $.ajax({
-                        url:'http://localhost:8080/reply/'+$("#id").val(),
+                        url:'http://www.tellmebaby.shop:8080/reply/'+$("#id").val(),
                         type:'delete',
                         contentType: 'application/json',
                         data:JSON.stringify(formData),
@@ -393,7 +430,7 @@
                         setSubmitButton();
                         },
                         error: function (ajaxContext) {
-                            alert("수정실패");
+                            alert("삭제실패");
                              $('#replyForm')[0].reset();
                             getReply();
                         setSubmitButton();
@@ -403,12 +440,12 @@
 
 
 
-            function setUpdateform(p1,p2,p3){
-                console.log(p1+p2+p3);
+            function setUpdateform(p1){
+                console.log(p1);
                 $("#id").val(p1);
-                $("#writer").val(p2);
-                $("#content").val(p3);
-                setUpdateButton()
+                $("#writer").val($("#rw"+p1).text());
+                $("#content").val($("#rc"+p1).text());
+                setUpdateButton();
             }
                 
 
@@ -430,5 +467,48 @@
             getReply();
             setSubmitButton();
         </script>
+         <!-- youtube-->
+        <script>
+      // 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '360',
+          width: '640',
+          videoId: 'pKwQlm-wldA',
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+
+      // 5. The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+      var done = false;
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+          setTimeout(stopVideo, 6000);
+          done = true;
+        }
+      }
+      function stopVideo() {
+        player.stopVideo();
+      }
+    </script>
     </body>
 </html>
