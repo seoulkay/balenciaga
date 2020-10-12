@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>오늘</title>
+	<meta charset="utf-8">
+	<meta description="잘 써주면 구글형아가 검색을 잘해줘">
+	<!--모바일 지원-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h1>html</h1>
+<h3>Hyper text mark-up language</h3>
+<!--하이퍼 테스트-->
+<a target="_parent" href="https://www.google.com">대중음악상</a>
+
+<!--ol(order list) ul(unorder list)-->
+
+<ol>
+	<li><a href="1.html">김해원</a></li>
+	<li><a href="2.html">에코</a></li>
+	<Li><a href="3.html">무기차</a></Li>
+</ol>
+<ul>
+	<li>이일환</li>
+	<li>미스포춘</li>
+	<Li>케리</Li>
+</ul>
+<!-- deprecated <- 쓰지마. -->
+<!-- obsolete <- 작동안된다. -->
+
+<p>이것은 문단입니다.</p>
+<p>이것은 두번째 문단입니다.</p>
+
+<!-- 줄바꿈 -->
+이것은 <br>
+줄바꿈 입니다. <br>
+
+<!-- 사진 태크 -->
+<img src="aa.jpg" height="300" alt="산 이미지" title="산 타이틀"/>
+
+<table border="50">
+	<thead style="background-color: lightblue">
+		<tr>
+			<td>번호</td>
+			<td>곡명</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td rowspan=2>비밀<br> 지옥으로 가버려</td>
+		</tr>
+		<tr>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td colspan=2>3 안아줘</td>
+		</tr>
+	</tbody>
+	<tfoot style="background-color: gray">
+		<tr>
+			<td>5</td>
+			<td>회전목마</td>
+		</tr>
+	</tfoot>
+</table>
+<!--폼 태그 -->
+<form action="1.html" method="get">
+	<p>아뒤 : <input type="text" name="id"placeholder="짧게쓰세요"></p>
+	<p>비번 : <input type="password" name="pw"></p>
+<p>
+<textarea cols="30" rows="4" name="reply"></textarea>
+</p>
+
+<select name="carSelect" multiple>
+	<option value="소나타">소나타</option>
+	<option value="산타페">산타페</option>
+	<option value="그렌져">그렌져</option>
+</select>
+
+<!--라디오-->
+<input type="radio" name="color" value="red"> 빨강
+<input type="radio" name="color" value="black"> 검정
+<input type="radio" name="color" value="blue"> 파랑
+
+<!--체크박스-->
+<input type="checkbox" name="size" value="10"> 10
+<input type="checkbox" name="size" value="20"> 20
+<input type="checkbox" name="size" value="30"> 30
+
+
+	<p><input type="submit" value="던지기"></p>
+
+	<input type="reset" value="다없앰">
+	<input type="button" value="걍버튼" onclick="alert('세상안녕')">
+
+	<input type="hidden" value="이자식 뭔가 보고있어">
+
+	<input type="file">
+</form>
+<iframe width="400"src="https://www.youtube.com/embed/5uLKIlCcjk0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<article>
+	본문이라는 태그야
+</article>
+
+<video width="320" height="240" controls>
+	<source src="testvideo.mp4" type="video/mp4">
+<!--정규표현식-->
+</body>
+</html>
