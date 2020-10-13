@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+    	<!--선택자 selector-->
+    	<style>
+    		*{font-family: 'Nanum Pen Script', cursive;
+    	}
+    		h2{color:blue}
+
+    		#lecture>li{
+        color:red;
+        text-decoration:underline;
+        }
+        .diffh2{
+        	color:gray;
+        }
+        #idse{
+        	color:brown;
+        }
+        ul,ol{
+        	background-color: powderblue;
+        }
+
+        .mydiv{
+        	font-size:2rem;
+        	color:#4f6cab;
+        }
+        .jung{
+        	font-size:0.5rem;
+        	border:1px solid #4f6cab 
+        	;
+        	text-align:justify;
+        	font-family:fantasy,"Times New Roman", Times, serif;
+        	font-weight: bold;
+        	line-height:2;
+        }
+        #container{
+        	color:green;
+        }
+        #container ul :first-child{
+        	color:blue;
+        }
+        .final {
+        	border:1px solid black;
+        	margin-left: 1rem;
+        	margin-top: 3rem;
+        	padding-left: 1rem;
+        	padding-top: 1rem;
+        }
+    	</style>
+    	<!-- 선택자의 종류가 중요 
+		태그 선택자 = li
+		클래스 선택자 = .
+		아이디 선택자 = #
+    	-->
+	</head>
+	<body>
+		<h1 style="color:red">hello Word</h1>
+		<h2>Hello world</h2>
+		<h3>Hello world</h3>
+		<!-- 부모자식선택자 -->
+		<ul id="lecture">
+        <li>HTML</li>
+        <li id="idse">CSS</li>
+        <li>JavaScript</li>
+        </ul>
+
+        <ol>
+        	<li>김</li>
+        	<li>해</li>
+        	<li>원</li>
+        </ol>
+
+		<h2 class="diffh2">Bye world</h2>
+		<p class="diffh2">내가원하는 곳</p>
+		<p id="idse">내가 원하는 아이디</p>
+		<!--div 구분자-->
+		<div class="mydiv">
+			이일환은 일본에 도쿄에 산다.
+		</div>
+		<p class="jung">
+			Fantasy is a genre of speculative fiction set in a fictional universe, often inspired by real world myth and folklore. Its roots are in oral traditions, which then became fantasy literature and drama. From the twentieth century it has expanded further into various media, including film, television, graphic novels, manga, animated movies and video games.
+
+			Fantasy is distinguished from the genres of science fiction and horror by the absence of scientific or macabre themes respectively, though these genres overlap. In popular culture, the fantasy genre predominantly features settings of a medieval nature. In its broadest sense, however, fantasy consists of works by many writers, artists, filmmakers, and musicians from ancient myths and legends to many recent and popular works.
+		</p>
+		<div id="container">
+  			<h1>수업순서</h1>
+ 			 <ul>
+  			  <li>html</li>
+  			  <li>css</li>
+  			  <li>js</li>
+ 			 </ul>
+			  <h1>수업참가자</h1>
+			  <ul>
+ 			   <li>최진혁</li>
+			   <li>최유빈</li>
+			    <li>한이람</li>
+ 			   <li>한이은</li>
+ 			 </ul>
+		</div>
+
+		<div class="final">
+			이건 마지막!
+		</div>
+	</body>
+</html>
