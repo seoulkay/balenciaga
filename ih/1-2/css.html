@@ -1,1 +1,108 @@
 
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="https://fonts.googleapis.com/css2?family=Dokdo&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+		<!--선택자 selector li -->
+		<style>
+			*{
+				font-family: 'Nanum Pen Script',"Dokdo", cursive;
+			}
+			h2{color:blue}
+			#lecture>li{
+		        color:red;
+		        text-decoration:underline;
+		      }
+		    .diffh2{
+		    	color:grey;
+		    }
+		    #idse{
+		    	color:brown;
+		    }
+		    ul,ol{
+		    	background-color: powderblue;
+		    }
+		
+		    .mydiv{
+		    	font-size:1rem;
+		    	color:#597d4a;
+		    }
+
+		    .jung{
+		    	font-size:1rem;
+		    	border:1px solid #597d4a;
+		    	text-align:justify;
+		    	font-family:fantasy,"Times New Roman", Times, serif;
+		    	font-weight:bold;
+		    	line-height:2;
+
+		    }
+		    #container{
+		    	color:green;
+		    }
+		    #container ul :first-child{
+		    	color:blue;
+		    }
+		    .final{
+		    	border:1px solid black;
+		    	margin-left:1rem;
+		    	margin-top:3rem;
+		    	padding-left:1rem;
+		    	padding-top:1rem;
+		    }
+		</style>
+		<!-- 선택자의 종류
+		태그 선택자 li
+		클래스 선택자 . -> 프론트
+		아이디 선택자 # -> 백엔드
+		-->
+
+	</head>
+	<body>
+		<h1 style="color:red">Hello World</h1>
+		<h2>Hello world</h2>
+		<h3>Hello world</h3>
+		<!--부모자식 선택자-->
+		<ul id="lecture">
+	      <li>HTML</li>
+	      <li id="idse">CSS</li>
+	      <li>JavaScript</li>
+	    </ul>
+	    <ol>
+	    	<li>김</li>
+	    	<li>해</li>
+	    	<li>원</li>
+	    </ol>
+	    <h2 class="diffh2">Bye world</h2>
+	    <p class="diffh2">내가원하는 곳</p>
+	    <p id="idse">내가 원하는 아이디</p>
+	   <!--div 구분자-->
+	  <div class="mydiv">
+	  	이일환은 일본에 도쿄에 산다.
+	  </div>
+	  <p class="jung">
+	  	Remembering that I'll be dead soon is the most important tool I've ever encountered to help me make the big choices in life. Because almost everything — all external expectations, all pride, all fear of embarrassment or failure — these things just fall away in the face of death, leaving only what is truly important.
+	  </p>
+	<div id="container">
+	  <h1>수업순서</h1>
+	  <ul>
+	    <li>html</li>
+	    <li>css</li>
+	    <li>js</li>
+	  </ul>
+	  <h1>수업참가자</h1>
+	  <ul>
+	    <li>최진혁</li>
+	    <li>최유빈</li>
+	    <li>한이람</li>
+	    <li>한이은</li>
+	  </ul>
+	</div>
+	<div class="final">
+		이건 마지막!
+	</div>
+
+	</body>
+</html>
+
+
