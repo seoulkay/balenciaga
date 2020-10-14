@@ -1,0 +1,39 @@
+			html{
+				background-color: royalblue;
+				background-image: url("aa.png");
+				background-repeat: repeat-y;
+				background-size:cover;
+			}
+			h1,p,a{border:1px solid red; text-align: justify;
+			}
+			h1{display:inline;}
+			a{display:block;}
+
+			*{box-sizing:border-box;}
+			
+			div{
+				border:1px solid red;
+				width:150px;
+			}
+
+			#small{border:10px solid black;}
+			#large{border:30px solid black;}
+
+			#me{
+				position:relative;
+				left:100px;
+				top:100px;
+			}
+
+			.container{
+				background-color: powderblue;
+				height:200px;
+				display:flex;
+				flex-direction: row;
+			}
+
+			.item{
+				background-color: tomato;
+				color: white;
+				border: 1px solid white;
+			}
