@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	</head>
+		<body>
+			<h2>내 첫번째 자바스크립트</h2>
+
+			<button onclick="myFunction()">이거슨 버튼</button>
+			<button onclick="myDate()">날짜 버튼</button>
+
+			<input type="button" value="버튼">
+			<input type="submit" value="제출">
+
+			<div id="demo">데모</div>
+
+		</body>
+
+		<script>
+			//변수 variable
+			// a = b : b를 a에 넣는다.
+			// a == b : a와 b는 같다.
+
+			//네임이라는 변수를 만든다. ->렘ram의 첫번째 빈칸에 네임이라는 공간을 만든다.
+			var name;
+			//네임에 김해원으로 바꾼다.
+			name = "김해원";
+			//네임에 이일환으로 바꾼다.
+			name = "이일환";
+			//네임을 홍성으로 바꾼다.
+			name = "홍성";
+
+			//함수 function(매개 변수 parameter);
+			//얼럿이라는 함수에 네임을 넣는다.
+			//alert(name);
+
+			function myFunction(){
+				alert("마이스크립트");
+			}
+			function myDate(){
+				alert(Date());
+
+				//도큐먼트=html .=안에 엘레먼트를 아이디로 찾는다.
+				//document.getElementById("demo").innerHTML = Date();
+			}
+		</script>
+</html>
