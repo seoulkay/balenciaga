@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset+"utf_8">
+</head>
+<body>
+	<h1>자바스크립트 다양한 API</h1>
+</body>
+<script>
+	//스트링 - 문자
+	//String - 문자객체
+
+	//var a = new String("이일환");
+	//var b = String("이일환");
+	//var c = "이일환";
+
+	//if (c 의 타입이 문자이면은 다음을 실행하라)
+
+	//alert(a == b && b == c);
+	//NaN <- Not a number 불만을 표현
+	//== 같은지 비교
+	//&& 앞 조건과 뒷조건이 모두 참이냐. (그리고)
+
+	//charAt < n번째 글자를 알려줘
+	//happy => 1
+	//01234
+
+	//var stringName = 'coding Everyday';
+	//"."이란 앞에걸 사용한다란 의미
+	//alert(stringName.charAt(0));
+	//charAt이란 함수 란 뜻
+	//파라미터
+	//alert(stringName.charAt(stringName.length-1));
+	//alert(stringName.charAt(1000) == '');
+
+	//alert(stringName.charCodeAt(0));
+	//s1="생활"
+	//s2="코딩"
+	//s3="_"
+	//s4="자바스크립트로 배우는 프로그래밍"
+	//s5=s1.concat(s2,s3,s4)
+	//alert(s5);
+	//alert(s1+','+s2+','+s3+','+s4)
+
+	//indexOf
+	//var happy = "happybirthday";
+	//alert(happy.indexOf("a"));
+	//alert(happy.indexOf("pp"));
+	//alert(appy.lastIndexOf("a"));
+
+	//alert("a".localeCompare("a"));
+
+	//var str = "000님 환영합니다. hello world"
+		;
+	//alert(str.replace("000", "이일환"));
+	//정규표현식
+	//alert(str.replace(/000/gi, "이일환"));
+	
+	//alert(str.search(/l/gi));
+	
+	//var happy="happy birthday";
+	//alert(happy.slice(1,3));
+	//alert(happy.slice(6));
+	//alert(happy.slice(-8));
+	//alert(happy);
+	
+	//var alpha = "a,b,c,d,e,f,g";
+	//var array = alpha.split(",", 3);
+	//alert(array[3]);
+
+	//var low = "kimhaewon";
+	//var upper = "HONGSUNG";
+
+	//alert(low.toUpperCase());
+	//alert(upper.toLowerCase());
+
+	//var x = new String("Hello world");
+	//alert(x.valueOf());
+
+	//반복문 구구단!!
+
+	for(var i = 0 ; i < 9 ; i ++){
+		console.log(i);
+	}
+
+	//+=은 계속더한다
+
+	var emails = 'a@cb.com&b@cb.com&c@cb.com&d@cb.com';
+	emailArray = emails.split('&');
+	emailStr = '';
+	for(var i = 0 ; i < emailArray.length ; i++){
+		emailStr += emailArray[i]+','
+	}
+	alert (emailStr);
+
+
+
+</script>
+</html>
