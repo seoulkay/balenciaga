@@ -1,1 +1,115 @@
 
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+	</head>
+	<body>
+
+		<h1>자바스크립트 다양한 API</h1>
+
+	</body>
+	<script>
+	//스트링 - 문자
+	//String - 문자객체
+	//var a = new String("이일환");
+	//var b = String("이일환");
+	//var c = "이일환";
+
+	//if(c 의 타입이 문자이면은 다음을 실행하라){}
+	//alert(a+b-c)
+	//NaN <- Not a number
+
+	//== 같은지 비교
+	//&& 앞 조건과 뒤조건이 모두 참이냐.
+	//alert(a == b && b == c);
+
+	//charAt < 몇번쨰 글자가 뭔지 알려줘
+	//var stringName = 'coding Everyday';
+	//alert(stringName.charAt(0));
+	//함수
+	//파라미터
+	//alert(stringName.charAt(stringName.length-1));
+	//alert(stringName.charAt(1000) == '');
+
+	//alert(stringName.charCodeAt(0));
+	//alert(a+b+c);
+
+	//s1="생활"
+	//s2="코딩"
+	//s3="-"
+	//s4="자바스크립트로 배우는 프로그래밍"
+	//s5=s1.concat(s2,s3,s4)
+	//alert(s5)
+	//alert(s1+""+s2+""+s3+""+s4)
+	//alert(s1+''+s2+''+s3+''+s4)
+
+	//indexOf
+	//var happy = "happybirthday";
+	//alert(happy.indexOf("a"));
+	//alert(happy.indexOf("pp"));
+	//alert(happy.lastIndexOf("a"));
+
+
+	//alert("z".localeCompare("a"));
+	//var str = new String("000님 환영합니다. hello worLd");
+	//alert(str.replace("000", "이일환"));
+	//정규표현식
+	//alert(str.replace(/l/gi, "이일환"));
+	//alert(str.search(/l/gi));
+
+	//var happy = "happy birthday";
+	//alert(happy.slice(1,3));
+	//alert(happy.slice(6));
+	//alert(happy.slice(-8));
+	//alert(happy);
+
+	//var alpha = "a,b,c,d,e,f,g";
+	//var array = alpha.split(",", 3);
+	//alert(array[3]);
+
+	//var low = "kimhaewon";
+	//var upper = "HONGSUNG";
+
+	//alert(low.toUpperCase());
+	//alert(upper.toLowerCase());
+
+	//var x = new String("Hello world");
+	//alert(x.valueOf());
+
+	//반복문 구구단!!
+	//시작|끝|한번돌때하는액션
+	for(var i = 0 ; i < 9 ; i++){
+		console.log(i);
+	}
+
+//emailArray =  a@cb.com b@cb.com c@cb.com d@cb.com
+
+//emailStr = "a@cb.com,b@cb.com,c@cb.com,d@cb.com,"
+
+//+=
+
+//var a = "a";
+//var b = "b";
+//var c = "c";
+//a = a + b;
+//a += b; //a == ab
+//a += c; //a == abc
+//alert(a);
+
+var emails = 'a@cb.com&b@cb.com&c@cb.com&d@cb.com';
+
+var array = emails.split("&");
+var result = "";
+
+for(var i = 0; i < array.length ; i++){
+	result = result + array[i] + ',';
+}
+
+alert(result);
+
+
+	</script>
+	}
+</html>
