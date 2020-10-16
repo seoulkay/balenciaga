@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--meta 보이지 않는 데이터-->
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<h1>자바스크립트 다양한 API</h1>
+	</body>
+
+	<script>
+		//스트링 - 문자
+		//String - 문자객체
+		//var a = new String("이일환");
+		//약식
+		//var b = String("이일환");
+		//약식
+		//var c = "이일환";
+
+		//if(c의 타입이 문자면 다음을 실행하라){}
+		//이일환이 아니라 "1"같은 숫자일 경우 오류가 날 수 있다.
+		//하지만 매우 극단적인 예다.
+
+		//alert(a+b-c)
+		//NaN <--Not a Number
+		
+		// == 같은지 비교
+		// && 앞 조건과 뒷 조건이 모두 참이냐? 
+		//alert(a == b && b==c);
+
+		//charAt <- 몇번째 글자가 어디에 있는지 알려줘
+		//happy 에서 a가 몇번째 있냐? --> 1   (0,1,2,3,...)
+
+		// = 집어넣다
+		// . 이용해서
+		//함수(파라미터);
+		//var stringName = 'coding Everyday' ;
+		//alert(stringName.charAt(0));
+		//리턴 - 실행해주는것, 결과를 보여주는 것
+		//alert(stringName.charAt(stringName.length-1));
+		//"마지막 글자를 알려줘."    / -1 0부터 시작하기 때문에...
+		//alert(stringName.charAt(1000) == '');
+
+		//alert(stringName.charCodeAt(0));   --유니코드 값을 알아내기
+
+		//alert(a+b+c); -- 숫자가 있으면 엉킨다.
+
+		//s1="생활"
+		//s2="코딩"
+		//s3="-"
+		//s4="자바스크립트로 배우는 프로그래밍"
+		//s5=s1.concat(s2,s3,s4)
+		//alert(s5);
+		//
+		//concat의 대안
+		//alert(s1+','+s2+','+s3+','+s4);
+		//alert("김해원");
+
+		//indexOf
+		//var happy = "HappyBirthday";
+		//alert(happy.indexOf("a"));
+		//alert(happy.indexOf("pp"));
+		//lastIndexOf
+		//alert(happy.lastIndexOf("a"));
+
+		//alert("a".localeCompare("c"));
+
+		//replace
+		//var str = new String("000님 환영합니다. heLlo worLd");
+		//alert(str.replace("000", "이일환"));
+		//정규표현식
+		//alert(str.replace(/000/gi, "이일환"));
+
+		//indexOf는 문자를 가지고 찾는데, search는 정규표현식을 가지고 찾는다.
+		//alert(str.search(/l/gi));
+
+		//slice
+		//var happy = "happy birthday";
+		//alert(happy.slice(1,3));
+		//alert(happy.slice(6));
+		//alert(happy.slice(-8));	
+		//alert(happy);
+
+		//"a, b, c"
+		//,
+		//"a"
+		//"b"
+		//"c"
+
+		//var alpha = "a,b,c,d,e,f,g";
+		//var array = alpha.split(",");
+		//var array = alpha.split(",", 3);
+		//alert(array[4]);
+
+		//substr, ubstring
+
+
+		//var low = "kimhaewon";
+		//var upper = "HONGSUNG";
+
+		//alert(low.toUpperCase());
+		//alert(upper.toLowerCase());
+
+
+		//var x = new String("Hello World");
+		//alert(x.valueOf());
+
+
+		//반복문 구구단
+		//시작~끝 한번 돌 때 하는 액션
+		//for(var i = 0 ; i < 9 ; i++){
+		//	console.log(i);
+		//}
+
+		var emails = 'a@cb.com&b@cb.com&c@cb.com&d@cb.com';
+		var array = emails.split("&");
+		var result = "";
+
+		for(var i = 0 ; < array.length ; i++){
+			result = result + array[i] + ',';
+		}
+		alert(result);
+
+	</script>
+</html>
+
+
+
+
