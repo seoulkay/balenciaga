@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--meta 보이지 않는 데이터-->
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<h1>자바스크립트 다양한 API</h1>
+	</body>
+
+	<script>
+
+		//var emails = 'a@cb.com&b@cb.com&c@cb.com&d@cb.com';
+
+		//var array = emails.split("&");
+		//alert(array);
+
+		//var result = "";
+
+		//for(var i = 0; i < array.length ; i++){
+		//	result += array[i] + ',';
+		//}
+
+		//alert(result);
+
+
+
+		//생성
+		var a = new Array(3); // 3칸짜리 배열
+		var b = new Array(1,2,3); // 3칸짜리 배열인데 첫1, 두2, 세3
+		var c = [1,2,3,4,5,6,7,8]; // 3칸짜리 배열인데 첫1, 두2, 세3
+		//var d = [];
+
+		//읽기
+		//console.log(a);
+		//console.log(b);
+		//console.log(c);		
+
+		//CRUD 생성Create 읽기Read 업데이트Update 삭제Delete
+		//업데이트
+
+		//맨 마지막에 추가
+		//b.push(4); //b.length ==4;
+
+		//선택적으로 수정 (중요문법!!!!)
+		//b[1] = "이일환"; //b.length ==4;
+
+		//b.pop(); //맨 마지막 것만 삭제  //b.length ==3;
+		//b.shift(); // 맨 처음 것만 삭제  //b.length ==2;
+		//b.splice(1); // 선택적으로 삭제  //b.length ==1;
+
+
+		//console.log("b배열은 " + b);  // +를 쓰는 순간 문자가 되어버린다.
+		//객체와 문자
+
+
+		// a=b (b를 a에 집어넣는다.) a==b (a는 b와 같다.)
+		//for(var i=1; i<c.length; i=i+2){ 
+		//	console.log(c[i]);
+		//	alert(c[i]);
+		//}
+
+		//배열 더하기. 원본 데이터 값을 변경하지 않는다.
+		//console.log(a.concat(b,c));
+
+		//join: split의 반대 개념
+		//console.log(c.join('&'));
+
+		//리버스: 원본을 건드리네...
+		//console.log(c.reverse());
+		//console.log(c.reverse());
+
+		//슬라이스, 특정 구간을 가지고 온다.
+		//console.log(c.slice(3,5));
+		//console.log(c.slice(-2));
+
+		//sort
+		//var numbers = [9,8,7,6,5,4,3,2,1];
+		////console.log(numbers.sort());	
+
+		//var splice = [1,2,3,4,5,6,7,8];
+		//splice.splice(3,3,'사','오','육');
+		//console.log(splice);
+
+		//console.log(splice.toString());
+
+		//splice.unShift("안녕");
+		//console.log(splice());
+
+		//https://ccpro.tistory.com/10
+		//8,9,10번 문제
+		//var d = [1];
+		//d.push("*");
+		//d.join('');
+		//console.log(d.join(''));
+		
+		//var result = "";
+		//for(var i = 0; i <=5 ; i++){
+		//	for(var j = 0; j <=i-1; j++)
+		//	result += d[i];
+		//}
+		//console.log(result);
+
+
+		//var tree = ["*"];
+		//console.log(tree.toString());
+		//tree.push("*");
+		//console.log(tree.toString());
+		//tree.push("*");
+		//console.log(tree.toString());
+		//tree.push("*");
+		//console.log(tree.toString());
+		//tree.push("*");
+		//console.log(tree.toString());
+
+
+		//for(var i = )
+
+
+		//var treeh = ["*","*","*","*","*","*"];
+
+ 		//for (var i = 0; i < treeh.length; i ++ ) {
+ 		//	treeh.slice(0,i);
+ 		//	console.log(treeh.toString());
+ 		//}
+
+//		for(var i=0; i<5; i++){ 
+//		console.log(d[i]);
+//		}		
+
+		d = [];
+		for(var i = 0; i < 5; i++){
+			d.push("*");
+				console.log(d.join(''));	
+		}
+		
+		e = ["*","*","*","*","*","*"];
+		for(var i = 0; i < 5; i++){
+			e.pop("*");
+				console.log(e.join(''));	
+		}
+
+		f = ["*","*","*","*","*"];
+		for(var i = -1; i < 4; i++){
+			f[i] = " ";
+				console.log(f.join(''));	
+		}
+
+
+	</script>
+</html>
+
+
+
+
