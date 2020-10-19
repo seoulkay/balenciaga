@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf_8">
+	</head>
+	<body>
+		<h1>자바스크립트 다양한 API</h1>
+	</body>
+	<script>
+		//배열 생성
+		var a = new Array(3); // 세칸짜리 배열
+		var b = new Array(1,2,3) // 세칸짜리 배열인데 첫1, 두2, 세3
+		var c = [1,2,3,4,5,6,7,8]; // 3칸 짜리 배열인데 첫1, 두2, 세3
+
+		//배열 읽기
+		console.log (a);
+		console.log (b);
+		console.log (c);
+
+		//CRUD 생성 읽기 수정 삭제 !!
+		b.push(4);
+		//선택적으로 수정
+		b[1] = "이일환";
+		//맨마지막것 없애기
+		b.pop();
+		//맨처음거 없애기
+		b.shift();
+		//선택적으로 없애기
+		b.splice(1);
+
+		console.log("b배열은 " + b);
+
+		//c 반복문을 써서 배열을 콘솔로그로 찍어보자
+
+		for (var i = 1 ; i < c.length; i = i+2) {
+			console.log(c[i]);
+		}
+		// 더하지만 원본은 건들지 않는다.
+		console.log(a.concat(b,c));
+
+		//스플릿의 반대 join
+
+		console.log(c.join(''));
+		//리버스 순서를 뒤집음
+		//console.log(c.reverse());
+		//슬라이스 특정구간을 가지고 온다.
+		console.log(c.slice(2,5));
+		console.log(c.slice(-2));
+
+		//정렬 솔트 
+		var numbers = [9,8,7,6,5,4,3,2,1];
+		console.log(numbers.sort());
+		//스플라이스 구간삭제 후 다른내용으로 대체가능
+		var splice = [1,2,3,4,5,6,7,8];
+		splice.splice(3,4,'four','오','육','칠');
+		console.log(splice);
+		console.log(splice.toString()); // 따옴표를 없애고 전체를 문자로 바꿔준다.
+		//왜 바로 콘솔로그찍으면 9가 나올까?
+		splice.unshift("안녕"); //맨앞에 추가시켜준다
+		console.log(splice);
+
+		//8,9,10 잘생각해서 콘솔로그 찍어보세요
+		https://ccpro.tistory.com/10
+
+	</script>
+</html>
