@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf_8">
+	</head>
+	<body>
+		<h1>자바스크립트 다양한 API</h1>
+	</body>
+	<script>
+  	var str = '*******';
+	var str2 = ["*","*","*","*","*"];
+		for (var i = 1; i < 6; i ++ ) {
+ 			console.log(str.slice(0,[i]));
+		}
+		for (var i = 1; i < 6; i ++ ) {
+ 			console.log(str.slice([i],6));
+		}
+		for (var i = -1; i < 4; i ++ ) {
+			str2[i] = ' ';
+ 			console.log(str2.join(''));
+		}
+    </script>
+</html>
