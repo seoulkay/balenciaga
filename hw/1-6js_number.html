@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--meta 보이지 않는 데이터-->
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<h1>자바스크립트 다양한 API</h1>
+	</body>
+
+	<script>
+
+		var num = 1;
+		var num2 = new Number(1);
+		var num3 = new Number(2534342345345);
+		var num4 = new Number(1.23423543);		
+		console.log(num3.toExponential());
+		console.log(num3.toExponential(1));
+		//숫자의 소수점 자리수 제한
+		console.log(num4.toFixed(4));
+		//전체 숫자의 수 제한
+		console.log(num4.toPrecision(4));
+		
+		var x = Math.PI;
+		console.log(x.toExponential());
+
+		var num4 = new Number(10/3);
+		console.log(num4.toExponential());
+
+		var num5 = new Number(7);
+		console.log(num5.toString());
+		console.log(num5.toString(2));
+
+		//2진수
+		//1   1
+		//2  10
+		//3  11
+		//4  100
+		//5  101
+		//6  110
+		//7  111
+
+		//primitive원시형 메모리 적게 먹고 기능이 없음
+		//objective객체형 메모리 많이 먹고 기능이 많음
+		//"new", "대문자"" ex) N
+
+		//숫자를 원시형으로 바꿔준다.
+		console.log(num5.valueOf());
+
+
+		//boolean 불린 (true 1 / false 0)
+		//!true -> false
+		//불린 객체는 처음에 무조건 true
+
+		//var bool = new Boolean(false);
+		var bool = false;
+
+		if(!bool){
+			console.log("실행되었다.");
+		}
+
+		bool = 0;
+		if(!bool){
+			console.log("이것도 실행되었다.");
+		}
+
+		console.log(bool.toString());
+
+		for(var i = 0; bool; i++){
+			console.log("안녕");
+		}
+
+
+	</script>
+</html>
