@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf_8'>
+</head>
+<body>
+
+</body>
+<script>
+	var result="";
+	for(var i = 0; i < 5 ; i++){
+		for(var j = 0; j<i+1; j++){
+			result = result + "*";
+		}
+		result += "\n";
+	}
+	console.log(result);
+	//역슬레쉬 앤은 \n은다음줄이다
+	//+=추가한다.
+
+		var result2="";
+		var starNum=5;
+	for(var i = 0; i < starNum ; i++){
+		for(var j = 0; j<starNum; j++){
+			if(i+j<starNum-1){
+			    result2 = result2 + " ";
+			}else{
+				result2 = result2 + "*";			
+			}
+			
+		}
+		result2 += "\n";
+	}
+	console.log(result2);
+
+
+	    var result2="";
+		var starNum2=5;
+	for(var i = 0; i < starNum2; i++){
+		for(var j = 0; j<starNum2+i; j++){
+			if(starNum2-(i+1)>j){
+			    result2 = result2 + " ";
+			}else{
+				result2 = result2 + "*";			
+			}
+		}
+		result2 += "\n";
+	}
+	console.log(result2);
+
+    for(var i = 0; i < starNum2; i++){
+		for(var j = 0; j<starNum2+(3-i); j++){
+			if(i>j){
+			    result2 = result2 + " ";
+			}else{
+				result2 = result2 + "*";			
+			}
+		}
+		result2 += "\n";
+	}
+	console.log(result2);
+
+</script>
