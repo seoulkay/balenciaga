@@ -1,1 +1,91 @@
 
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+	</head>
+	<body>
+
+		<h1>자바스크립트 다양한 API</h1>
+
+	</body>
+	<script>
+		//배열 생성	
+		var a = new Array(3); // 3칸짜리 배열 
+		var b = new Array(1,2,3); // 3칸짜리 배열인데 첫1, 두2, 세3
+		var c = [1,2,3,4,5,6,7,8]; // 3칸짜리 배열인데 첫1, 두2, 세3
+
+		//배열읽기
+		console.log(a);
+		console.log(b); //b.length == 3;
+		console.log(c);
+
+		//CRUD 생성 읽기 수정 삭제!!
+		//맨마지막에 추가
+		b.push(4); //b.length == 4;
+		//선택적으로 수정
+		b[1] = "이일환"; //b.length == 4;
+		//맨마지막것없애기	
+		b.pop(); //b.length == 3;
+		//맨 첫번째것 없애기
+		b.shift(); //b.length == 2;
+		//선택적으로 없애기
+		b.splice(1); //b.length == 1;
+		console.log("b배열은 " + b);
+
+		//c 반복문을 써서 배열을 콘솔로그로 찍어보쟈 iterater
+		for(var i = 1 ; i < c.length ; i = i+2 ){
+			console.log(c[i]);
+		}
+		//더하기 하지만 원본은 안건들인다.
+		console.log(a.concat(b,c));
+		//스플릿의 반대 조인
+		console.log(c.join('#'));
+		//리버스
+		//console.log(c.reverse());
+		//슬라이스 특정구간을 가지고 온다.
+		console.log(c.slice(3,5));
+		console.log(c.slice(-2));
+
+		var numbers = [9,8,7,6,5,4,3,2,1];
+
+		console.log(numbers.sort());
+
+		var splice = [1,2,3,4,5,6,7,8];
+		splice.splice(3,4,"사","오","육","칠");
+		console.log(splice);
+		console.log(splice.toString());
+		//왜 바로 콘솔로그찍으면 9가 나올까?
+		splice.unshift("안녕");
+		console.log(splice);
+
+		//https://ccpro.tistory.com/10
+
+		d = [];
+		for(var i = 0; i < 5; i++){
+			d.push("*");
+				console.log(d.join(''));	
+		}
+		
+		e = ["*","*","*","*","*","*"];
+		for(var i = 0; i < 5; i++){
+			e.pop("*");
+				console.log(e.join(''));	
+		}
+
+		f = ["*","*","*","*","*"];
+		for(var i = -1; i < 4; i++){
+			f[i] = " ";
+				console.log(f.join(''));	
+		}
+
+		var treeh = ["*","*","*","*","*","*"];
+
+ 	for (var i = 0; i < treeh.length; i ++ ) {
+ 		treeh.slice(0,i);
+ 		console.log(treeh.toString());
+ 	}
+
+	</script>
+</html>
