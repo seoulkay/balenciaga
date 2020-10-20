@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf_8">
+	</head>
+	<body>
+		<h1>자바스크립트 다양한 API</h1>
+	</body>
+	<script>
+		var result="";
+		
+		for(var i = 0 ; i < 10 ; i++){	
+			
+			for(var j = 1 ; j < i+2 ; j++){
+				result = result + "*";
+			}
+			
+			result = result + "\n";
+		}
+
+		console.log(result);
+		
+		var result2="";
+
+		var starNum = 10;
+		
+		for(var i = 0 ; i < starNum ; i++){	
+			
+			for(var j = 0 ; j < starNum ; j++){
+				if( i + j < starNum - 1 ){
+					result2 = result2 + " ";
+				}else{
+					result2 = result2 + "*";
+				}
+			}
+			
+			result2 = result2 + "\n";
+		}
+		
+		//i = 0 j = 0,1,2,3,4,5,6,7,8
+		//i = 0 j = 9
+
+		//i = 1 j = 0,1,2,3,4,5,6,7
+		//i = 1 j = 8,9
+
+		//i ? j ?
+		//10 - i - 1 = 9
+		//10 - i - 1 = 8
+		//i+j < 10
+
+		console.log(result2);
+
+    </script>
+</html>
+
+		
