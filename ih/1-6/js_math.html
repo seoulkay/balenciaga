@@ -1,1 +1,90 @@
 
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf_8">
+	</head>
+	<body>
+		<h1>자바스크립트 다양한 API</h1>
+	</body>
+	<script>
+		var xxxx = Math.PI;
+		console.log(xxxx);
+		//제곱근
+		var yyyy = Math.sqrt(12);
+		console.log(yyyy);
+		//절대값
+		var xx = Math.abs(-5);
+		console.log(xx);
+		//올림
+		var hw = 5.1;
+		var yy = Math.ceil(hw);
+		console.log(yy);
+		//내림
+		var floor = Math.floor(5.9);
+		console.log(floor);
+		//자연로그
+		var log = Math.log(1000000);
+		console.log(log);
+		const array=[2,42,4,2,3,1];
+		//최대
+		console.log(Math.max.apply(null, array));
+		console.log(Math.max(10, 200, ...array));
+		//최소
+		console.log(Math.min(...array));
+		//제곱
+		console.log(Math.pow(2,10));
+		//랜덤 0-1 아무거나 리턴 
+		console.log(Math.ceil(Math.random()*6));
+		//반올림
+		console.log(Math.round(5.6));
+		
+
+		//넘버
+		var num = 1;
+		var num2 = new Number(1);
+
+		var num3 = new Number(253432323);
+		console.log(num3.toExponential(2));
+
+		var fix = new Number(1.2323231232);
+		var pre = new Number(2.2323231323);
+
+		//소수점 자리 정해주고
+		console.log(fix.toFixed(2));
+		//전체 수의 수를 정해준다.
+		console.log(pre.toPrecision(2));
+
+		var tos = new Number(7.2);
+		console.log(tos.toString());
+		console.log(tos.toString(2));
+
+		//1	   1
+		//2	  10
+		//3	  11
+		//4  100
+		//5  101
+		//6  110
+		//7  111
+		//primitive원시형(메모리 적게 먹고 기능이 없어) //object객체형(메모리는 많이 먹고 기능이 많아)
+
+		console.log(tos.valueOf());
+
+		//boolean 불린 (true : false | 1 : 0)
+		//불린 객체는 무조건 true
+		var bool = new Boolean(false);
+		//var bool = 0;
+		if(!bool){
+			console.log("실행되었다.");
+		}
+
+		bool = false;
+		if(!(!(!bool))){
+			console.log("이것도 실행되었다.");
+		}
+
+		console.log(bool.toString());
+
+		
+    </script>
+</html>
