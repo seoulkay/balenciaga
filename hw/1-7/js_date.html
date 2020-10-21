@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--meta 보이지 않는 데이터-->
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<h1>자바스크립트 다양한 API</h1>
+		<p>
+			이스케이프
+			&lt;p&gt;
+		</p>
+
+
+	</body>
+
+	<script>
+		//EPOCH 시간 -> 1603286523
+		//1970년 1월 1일부터 객체의 시간까지에 대한 밀리세컨드
+		//1982년 3월 3일 ??? ->컴퓨터가 이해하지 못한다.
+		//어느 시점으로부터 초를 센거다. 컴퓨터가 읽을 수 있게 통일해준 것.
+		//1000분의 1초까지 숫자로 다 표현된다.
+
+		var d = new Date();
+		console.log(d);
+		var d1 = new Date(1603286479000);
+		console.log(d1);
+		var d2 = new Date("january 01, 2000 00:00:00");
+		console.log(d2);
+		var d3  = new Date(2000, 0, 1);
+		console.log(d3);
+
+		console.log(d1.getDate());
+		console.log(d1.getDay());
+
+		var dd=new Date();
+		var weekday=new Array();
+		weekday[0]="일";
+		weekday[1]="월";
+		weekday[2]="화";
+		weekday[3]="수";
+		weekday[4]="목";
+		weekday[5]="금";
+		weekday[6]="토";
+		//alert("오늘은 " + weekday[d.getDay()]+'요일 입니다'); // 오늘의 요일을 알려준다.
+
+		console.log(d1.getFullYear());
+		console.log(d1.getTime());
+
+		//대한민국은 UTC+9
+
+		x = new Date()
+		currentTimeZoneOffsetInHours = -x.getTimezoneOffset()/60
+		console.log("gmt에서 " + "(utc기준) " + currentTimeZoneOffsetInHours);
+
+		//parse 파싱한다.
+		console.log(Date.parse("Jan 3, 82"));
+
+		//setDate 날짜 지정
+		d1.setDate(30);
+		console.log(d1);
+
+		console.log(d1.toDateString());
+		console.log(d1.toTimeString());
+
+		console.log(d1.toLocaleDateString());
+		console.log(d1.toLocaleTimeString());
+		console.log(d1.toLocaleString());
+
+		//URL encode <> decode
+		//https://opentutorials.org/course/50/187?to=이일환 
+		//한글은 깨진다.  그렇기 때문에 encode => utf-8
+
+		var original = 'http://opentutorials.org/javascript_reference/?id=155&name=안녕하세요'
+		var before = encodeURI(original);
+		console.log(before); // string, http://opentutorials.org/javascript_reference/?id=155&name=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94
+		var after = decodeURI(before);
+		console.log(after); // string, http://opentutorials.org/javascript_reference/?id=155&name=안녕하세요
+
+
+		var t = new Object();
+		alert(Number(t)); // NaN
+	 
+		var t = new Boolean(true);
+		alert(Number(t)); // number, 1
+	 
+	 
+		var t = new Boolean(false);
+		alert(Number(t)); // number, 0
+	 
+		var t = new Date(1980,1,3);
+		alert(Number(t)); // number, 318351600000
+	 
+		var t = new String('codingeverybody');
+		alert(Number(t)); // number, NaN
+	 
+		var t = new String('1000');
+		alert(Number(t)); // number, 1000
+
+		//부동소수점 유투브 강의를 보자.
+		//var i = 0.1;
+		//console.log(i):  ===> 0.10000030234
+
+		//parseInt < 뽑아내다 Integer 정수 1,2,3,4, -1, 0
+		//parseFloat < 뽑아내다 Float 실수 1.2 , 1.222, -3.4444
+
+		//var t =[1,2,3];
+		//console.log(String(t));
+
+		//이스케이프
+		console.log('이일환 "안녕!"');
+		console.log("이일환 \"안녕!\"");
+		console.log("''");
+
+		//		\b Backspace
+		//		\f Form Feed
+		//		\n New Line
+		//		\r Carrage Return
+		//		\t Horizontal Tabulator
+		//		\v Vertical Tabulator
+
+
+		//regex 정규표현식 < 검색 < 식을 만들고 그 조건에 만족하는 문자들을 리턴
+		//ex. 앞에는 영어고 중간에 @가 잇으며 닷이 나오고 세글자 영어가 나오는 것
+
+		//(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])
+
+		var text = "First line\nsecond line";
+		var regex = /(\S+) line\n?/y;
+		 
+		var match = regex.exec(text);
+		console.log(match[1]);  // "First"
+		console.log(regex.lastIndex); // 11
+		 
+		var match2 = regex.exec(text);
+		console.log(match2[1]); // "Second"
+		console.log(regex.lastIndex); // "22"
+		 
+		var match3 = regex.exec(text);
+		console.log(match3 === null); // "true"
+
+		//test
+		//비밀번호 대소문자 검사 같은거에 쓰임
+		var regexp = /app/;
+		console.log(regexp.test('apple')); // true
+		console.log(regexp.test('orange')); // false
+		console.log(regexp.test('appstore')); 
+
+		//숙제 반목문
+		//https://gsk121.tistory.com/234
+		
+
+	</script>
+</html>
