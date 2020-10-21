@@ -1,1 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf_8'>
+</head>
+<body>
+	<p>
+		&lt;p&gt;
+	</p>
+	<p>
+		escape
+	</p>
 
+</body>
+    <script>
+    	//1970년 1월 1일부터 객체의 시간까지에 대한 밀리세컨드
+    	//EPOCH 시간-->1603286513 어느시점부터 초를 센거다
+    	//1982년 2월 3일??
+    	var d = new Date();
+    	var d1 = new Date(1603254113000);
+    	var d2 = new Date("january 01, 2000 00:00:00");
+    	var d3 = new Date(2000, 0, 1);
+    	var today = new Date (1980,0,3,1,28,35);
+
+
+    	console.log(d);
+    	console.log(d1);
+    	console.log(d2);
+    	console.log(d3);
+
+    	console.log(d1.getDate());
+    	console.log(d1.getDay());
+    	console.log(d1.getFullYear());
+    	console.log(d1.getHours());
+    	console.log(d1.getTime());
+
+    	x = new Date()
+		currentTimeZoneOffsetInHours = -x.getTimezoneOffset()/60
+		//alert("GMT에서 "+currentTimeZoneOffsetInHours);
+
+		//parse 파싱한다.
+		//1월12일 2020년
+		console.log(Date.parse("Jan 3, 1980"));
+
+		d1.setDate(30);
+
+		console.log(d1.toString());
+		console.log(d1.toDateString());
+		console.log(d1.toTimeString());
+		console.log(today.toLocaleDateString());
+		console.log(today.toLocaleTimeString());
+		console.log(today.toLocaleString());
+
+		//URL encode <> decode
+		//encode => utf_8
+
+		var original = 'http://opentutorials.org/javascript_reference/?id=155&name=안녕하세요'
+		var before = encodeURI(original);
+		console.log(before); // string, http://opentutorials.org/javascript_reference/?id=155&name=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94
+		var after = decodeURI(before);
+		console.log(after); // string, http://opentutorials.org/javascript_reference/?id=155&name=안녕하세요
+
+		//부동소수점
+		//var i = 0.1;
+		//0.100000003020
+		//parseInt < 뽑아내다 Interger 정수 1 2 3 4  -1 0
+		//parseFloat < 뽑아내다 float 실수 1.1 1.222 -3.4444
+
+		//이스케이프
+		console.log('이일환 "안녕!"'); //''를 문자열에 넣고 싶으면 ""안에 넣고 ""를 넣고 싶으면 ''안에 넣는다
+
+		// \b Backspace
+		// \f Form Feed
+		// \n New Line
+		// \r carriage Return
+		// \t Horizontal Tabulator
+		// \v Vertical Tabulator
+
+
+		//"앞에는 영어고 중간에 @있으며 닷이 나오고 세글자 영어가 나오는것"
+		//이런식으로 식을 만들 수 있음 ex) email regex
+		//RegExp 정규표현식 <검색 < 식을 만들고 그조건에 만족하는 문자들을 리턴
+
+		//"^[a-zA-Z0-9]*$" 찾는 패턴
+
+		var text = "First line\nsecond line";
+		var regex = /(\S+) line\n?/y;
+		 
+		var match = regex.exec(text);
+		console.log(match[1]);  // "First"
+		console.log(regex.lastIndex); // 11
+		 
+		var match2 = regex.exec(text);
+		console.log(match2[1]); // "Second"
+		console.log(regex.lastIndex); // "22"
+		 
+		var match3 = regex.exec(text);
+		console.log(match3 === null); // "true"
+
+
+		var regexp = /app/;
+		console.log(regexp.test('apple')); // true
+		console.log(regexp.test('orange')); // false
+
+
+
+
+
+	</script>
+</html>
