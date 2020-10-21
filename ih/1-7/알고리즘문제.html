@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf_8'>
+</head>
+<body>
+
+</body>
+<script>
+	var input = new Number(prompt("숫자를 입력하세요"));
+	var result = 0;	
+	
+	///
+	for(var i = 1 ; i < input+1 ; i++){
+		//나머지 2%2 == 0 나누기 2/2 == 1
+		if(i%2==0){
+			//짝수
+			// result += i;
+			result = result + i;	
+		}
+	}
+	///
+	console.log("1~"+input+"까지의 짝수의 합은 "+result+"입니다.");
+
+</script>
+
+</html>
