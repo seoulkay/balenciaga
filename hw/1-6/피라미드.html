@@ -8,22 +8,26 @@
 
 		if(starNum2%2==1){
 			for(var i = 0; i < starNum2/2 ; i++){
-					for(var j = 0; j < starNum2/2; j++){
-						if(i+j < starNum2/2 - 1){
-							result5 += A;
-						}else{
-							result5 += B;
-						}
+				for(var j = 0; j < starNum2/2; j++){
+					if(i+j < starNum2/2 - 1){
+						result5 += A;
+					}else{
+						result5 += B;
 					}
-						for(var k =0; k < i; k++){
-							result5 += B;
-						}
-
-					result5 = result5 +"\n";
 				}
+				for(var k =0; k < i; k++){
+					result5 += B;
+				}
+				result5 = result5 +"\n";
+			}
 			console.log(result5);		
 
 			}else{
 				console.log("홀수만 입력하시오.");
-			}
+		}
 
+
+
+		//요상한 모양
+
+		
