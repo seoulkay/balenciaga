@@ -1,77 +1,28 @@
-    var starNum = 10;
-    
-    var result3 = "";
-
-		if(starNum%2==1){
-			for(var i = 0; i <starNum ; i++){
-				for(var j = 0; j <starNum; j++){
-					if(i+j<starNum - 1){
-						result3 += " ";
-					}else{
-						result3 += "*";	
-					}
-				}
-				result3 = result3 + "\n";
-			}
-		console.log(result3);		
-		}else{
-			console.log("홀수를 입력하세요.");
-		}
-    
-    
-    
-    
-    var result4 = "";
-
-		for(var h = 0 ; h < 2 ; h++){
-			if(h<1){
-				for(var i = 0; i <starNum ; i++){
-					for(var j = 0; j <starNum; j++){
-						if(i+j<starNum - 1){
-							result4 += " ";
-						}else{
-							result4 += "*";	
-						}
-					}
-					result4 = result4 + "\n";
-				}				
-			}else{
-				for(var k = 0; k <starNum ; k++){
-					for(var l = 0; l <starNum; l++){
-						if(k+l<starNum - 1){
-							result4 += "*";
-						}else{
-							result4 += " ";	
-						}
-					}
-					result4 = result4 + "\n";
-			}
-		}
-	}
-		console.log(result4);
-    
-    
-    
-    var starNum2 = 11;
+		var starNum2 = 11;
 		var result5 = "";
 		var result6 = "";
 
 		var A = " ";
 		var B= "*";
 
-		for(var i = 0; i < starNum2/2 ; i++){
-				for(var j = 0; j < starNum2/2; j++){
-					if(i+j < starNum2/2 - 1){
-						result5 += A;
-					}else{
-						result5 += B;
+		if(starNum2%2==1){
+			for(var i = 0; i < starNum2/2 ; i++){
+					for(var j = 0; j < starNum2/2; j++){
+						if(i+j < starNum2/2 - 1){
+							result5 += A;
+						}else{
+							result5 += B;
+						}
 					}
-				}
-					for(var k =0; k < i; k++){
-						result6 += B;
-					}
+						for(var k =0; k < i; k++){
+							result5 += B;
+						}
 
-				result5 = result5 + result6 +"\n";
+					result5 = result5 +"\n";
+				}
+			console.log(result5);		
+
+			}else{
+				console.log("홀수만 입력하시오.");
 			}
-		console.log(result5);
-    
+
