@@ -1,1 +1,171 @@
 
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <script>
+            //alert('Hello world');
+            console.log(1);
+            console.log(1.2 + 2.3); //프리시전
+            console.log(2*4);
+            console.log(6/2);
+            console.log(Math.pow(3,2));
+            console.log(Math.round(4.5));
+            console.log(Math.ceil(1.2));
+            console.log(Math.floor(1.9));
+            console.log(Math.sqrt(16));
+            console.log(Math.random()*5+1);
+            //0.0 * 6  = 0?
+            //0.2 * 6  = 1.2?
+			//0.4 * 6  = 2.4?
+			//0.6 * 6  = 3.6?
+			//0.8 * 6  = 4.8?
+			//0.9999999999999999999999999999999999 * 6  = 5.....?
+			//1.0 * 6 = 6
+			console.log(typeof "1"); //원시타입
+			console.log(typeof 1);	//원시타입
+			//Escape!
+			console.log('kim"s burger');
+			console.log("kim\"s burger");
+			console.log("kim\ns burger");
+			console.log("kim\ns burger".length);
+			
+			var a = new Number(1);
+			var b = new String("꼰대스탈");
+			console.log(typeof a); //object 객체
+
+			console.log(typeof b); //object 객체 
+			var c="김해원";
+			var d="축하";
+			console.log(c + d);
+			console.log(c.concat(d));
+
+			//내가한일을 꼭 쓰자
+
+			//a=1;
+			//=== 무서워서 안쓴다.
+			var d = ""; //아무것도 없는 엠티
+			var e; //햇을때 기본으로 넣어준다. 
+			//= undefined; //undefined
+			var f = null // NULL
+
+			console.log(e);
+			console.log(f);
+
+			//== / === / != / !==
+
+			if(1!=2){
+				console.log("같지않으면 출력");
+			}
+
+			var tf = new Boolean(false);
+			tf = false;
+
+			//true 1 / false 0
+			if(!6%3==0){
+				console.log("같지않으면 출력!!!");
+			}
+
+
+
+			for(var i = 0 ; i <= 10 ; i++){
+				console.log(i);
+			}
+
+
+			//만약에 초1이면 if(초1) 
+			//아닌데 초2면   else if(초2)
+			//아닌데 초3이면 else if(초3)
+			//아닌데 초4면  else if(초4)
+			//그것도 아니면 else
+
+			/*var id = prompt("아이디를 입력하세요");
+			if(id=="kay"){
+				password = prompt("비번을 입력하세요.");
+				if(password === '1234'){
+					alert("인증성공");
+				}else{
+					alert("인증 실패");
+				}
+			}else{
+				alert("인증실패 했습니다.");
+			}*/
+
+		var you = "서울사람";
+		var sex = "female";
+		var age = 12;
+
+		//너는 서울 사람이면서 남자면은 AND
+		if(you=="서울사람" && sex=="male"){
+			console.log("1번");
+		}
+		//너는 서울 사람이거나 남자면은 OR
+		if(you=="서울사람" || sex=="male"){
+			console.log("2번");
+		}
+
+		//너는 서울 사람이거나 남자면서 나이가 12살이면
+		if((you=="서울사람" || sex=="male")&&age==12){
+			console.log("3번");
+		}
+
+		//너는 서울 사람이거나 남자면서 나이가 12살이 아니면 ! NOT 연산자
+		if(!((you=="서울사람" || sex=="male")&&age==12)){
+			console.log("4번");
+		}
+		if(!''){
+			console.log("엠티도 폴스");
+		}
+		if(!undefined){
+			console.log("언디파인도 폴스");
+		}
+		if(!null){
+			console.log("널도 폴스");
+		}
+		if(!NaN){
+			console.log("난도 폴스");
+		}
+
+
+
+		for(var i = 0 ; i < 10 ; i++){
+
+			if(i==5){break;}
+			console.log(i);	
+		
+		}
+
+		//n^2 2단 반복문
+		for(var i = 0 ; i < 5 ; i++){
+			
+
+			for(var j = 0 ; j < 5 ; j++){
+				if(j==2){
+					continue;
+				}
+				console.log("지금 i = "+i+"지금 j = "+j);//디버거
+			}
+
+		}
+
+		
+
+		/*var i = 0;
+		while(i<10){
+			if(i==5){
+				continue;
+			}
+			console.log(i);
+			i++;
+		}*/
+
+		//핵심! 반복문을 하나만 적용
+		//break; //반복문에서 나와라 코드성능!
+		//continue; //다음 반복으로 가라
+
+
+        </script>
+    </body>
+</html>
