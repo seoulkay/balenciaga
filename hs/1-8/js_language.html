@@ -1,1 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+	<script>
+		//alert('hello world');
+		console.log(1);
+		console.log(1.2 + 1.3);
+		//반듯이 프리시젼을 꼭 정해줘야한다.
+		console.log(2 * 5);
+		console.log( 6 / 2 );
 
+		console.log(Math.pow(3,2));
+		console.log(Math.round(4.5));
+		console.log(Math.ceil(1.2));
+		console.log(Math.floor(1.9));
+		console.log(Math.sqrt(16));
+		console.log(Math.random()*5+1);
+		console.log(typeof "1"); //원시타입
+		console.log(typeof 1);	//원시타입
+
+		//Escape!
+		console.log('kim"s burger');
+		console.log("kim\"s burger");
+		console.log("kim\ns burger");
+		console.log("kim\ns burger".length);
+
+		var a = new Number(1);
+		var b = new String("꼰대스탈");
+
+		console.log(typeof a); //object 기능이 많아서 쓴다 원시보다 용량큼
+		console.log(typeof b); //object
+
+		var c = "김해원";
+		var d = "축하";
+
+		console.log(c + d);
+		console.log(c.concat(d));
+
+		//내가 한일을 꼭 쓰자.
+
+		//a=1;
+		//=== 무서워서 안쓴다.
+		var d = ""; //아무것도 없는 엠티
+		var e; //했을때 기본으로 넣어준다.
+		// = undefined;
+		var f = null; // null
+		
+		console.log(e);
+		console.log(f);
+
+		//==같으면 / ===정확하게같으면 / !="같지않으면" /!== 정확하게 같지않으면
+
+		if(1!=2){
+			console.log("같지않으면 출력")
+		}
+
+		var tf = new Boolean(true);
+		ㅅㄹ = false;
+
+		//true 1 / false 0
+		if(0){
+			console.log("같지않으면 출력!!")
+		}
+
+		for(var i = 0 ; i <= 10 ; i++){
+			console.log(i);
+		}
+
+		//else if
+		// 만약에 초1이면 if(초1)
+		// 아닌데 초2면 else if(초2)
+		// 아닌데 초3이면 else if(초3)
+		// 아닌데 초4이면 else if(초4)
+		// 그것도 아니면 else
+
+
+		//소수를 풀기위해 if(!a%3==0)
+
+		/*var id = prompt("아이디를 입력하세요");
+
+		if(id=="kay"){
+			password = prompt("비번을 입력하세요.");
+			if(password === '1234'){
+				alert("인증성공")
+			}else{
+				alert("인증실패")
+			}
+		}else{
+			alert("인증실패 했습니다.");
+		}*/
+
+
+		var you = "서울사람";
+		var sex = "female";
+		var age = 12;
+
+		//너는 서울 사람이면서 남자면은
+		if(you=="서울사람"&&sex=="male"){
+			console.log("1번");
+		}
+		//너는 서울 사람이거나 남자면은
+	    if(you=="서울사람"||sex=="male"){
+	    	console.log("2번");
+	    }
+
+	    //너는 서울 사람이거나 남자면서 나이가 12살이면
+
+	    if((you=="서울사람"||sex=="male")&&age==12){
+	    	console.log("3번");
+	    }
+	    if(!((you=="서울사람"||sex=="male")&&age==12)){
+	    	console.log("4번");
+	    }
+
+	    if(!''){
+	    	console.log("엠티도 폴스");
+	    }
+
+	    if(!undefined){
+	    	console.log("언디파인도 폴스");
+	    }
+	    if(!null){
+	    	console.log("null도 폴스");
+	    }
+	    if(!NaN){
+	    	console.log("NaN도 폴스");
+	    }
+
+	    for(var i = 0; i < 10 ; i++){
+	    	if(i==5){
+	    		break;
+	    	}
+	    	console.log(i);
+	    }
+
+	    for(var i = 0 ; i < 5 ; i ++){
+
+	    	for(var j = 0 ; j < 5 ; j++){
+	    		if(j==2){
+	    			break;
+	    		}
+
+	    		console.log("wlrma i = "+i+"지금 j = "+j); //디버거
+
+	    	}
+	    }
+	    /*var i = 0;
+	    while(i<10){
+	    	console.log("컴퓨터 죽어라!")
+	    	i++;
+	    }*/
+
+	    //핵심! 반복문을 하나만 적용
+	    //break; //반복문에서 나와라
+	    //continue //다음 반복으로 가라
+
+
+
+	</script>
+</body>
+
+</html>
