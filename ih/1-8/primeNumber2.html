@@ -1,0 +1,27 @@
+<script>
+var id = prompt("숫자를 입력하세요.")
+
+for(var a=2 ; a<=id ; a++){
+	//플래그 불린?
+	prime = true;
+
+	for(var i=2 ; i<a ; i++){
+		//console.log("지금 도는것은 "+a+" ; "+i);
+		if(a%i==0){
+			prime = false;
+			break;	//답이 아니다!
+		}
+		//안나우어졌다.
+
+		//만약에 a가 i로 떨어지면 안쪽 반복문 끝
+		//아니면 콘솔로그 찍고 안쪽 반복문 끝
+	}
+
+	//요기로 나와!!
+	//답과 오답을 구별!!
+
+	if(prime == true){
+		console.log(a); //답을 보여주고 끝
+	}	
+}
+</script>
