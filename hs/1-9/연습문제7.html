@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf_8'>
+	</head>
+	<body>
+
+	</body>
+
+
+	<script>
+
+		//반복 입력 prompt
+		//입력이 0이면 종료 if(input==0) break;
+		//나이에 따라 구분
+		//var old = 0;
+		//old += 1;
+		//class Person = 
+		//this.id 순번 숫자
+		//this.age 숫자
+		//this.category [노인/성인/청소년/아동]
+
+		/*class Person {
+				constructor (p1. p2, p3) {
+				this.id = p1;
+				this.age = p2;
+				this.category = p3;
+			}
+		}
+
+		var person1 = new Person(1, 10, "노인");
+		console.log(person1)
+	*/
+
+
+	function categoryDivider(age){
+		
+		var p3 = "";
+
+		
+		
+		if(age > 0 && age < 8){
+			p3 = "아동";
+		}else if(age > 7 && age < 20){
+			p3 = "청소년";
+		}else if(age > 19 && age < 65){
+			p3 = "성인";
+		}else{
+			p3 = "노인";
+		}
+		return p3;
+	}
+
+	var personList = [];
+	class Person{
+		constructor(p1,p2,p3){
+			this.id = p1;
+			this.age = p2;
+			this.category = p3;
+		}
+	}
+
+	var age = prompt("나이를 입력하세요(0이하면 종료)");
+	var roof = '';
+	for (var i = 0 ; i = i+1 ; i++){	
+		if(age <= 0){
+			console.log("...조사종료...");
+			break;
+			}
+		var age = prompt("나이를 입력하세요(0이하면 종료)");
+		var person1 = new Person(personList.length+1, age, categoryDivider(age));
+			personList.push(person1);
+	}
+
+
+	//총 인원
+	//카테고리별 인원
+	var old = 0;
+	var adult = 0;
+	var young = 0;
+	var child = 0;
+
+	for(var i = 0; i < personList.length; i++){
+			if (personList[i].category == "노인") {
+				old ++;
+			}else if (personList[i].category == "성인") {
+				adult ++;
+			}else if (personList[i].category == "청소년") {
+				young ++;
+			}else{
+				child ++;
+			}
+		}
+
+	console.log("노인은"+old);
+	console.log("성인은"+adult);
+	console.log("청소년은"+young);
+	console.log("아동은"+child);
+	
+	console.log("<귀댁의 가족구성>\n총 "+personList.length+"명 : 노인"+old+"명, 성인"+adult+"명, 청소년"+young+"명, 아동"+child+"명\n다자녀 지원금이 "+child*500000+"원 지급됩니다.");
+
+	console.log(personList);
+
+
+	</script>
+
+</html>
