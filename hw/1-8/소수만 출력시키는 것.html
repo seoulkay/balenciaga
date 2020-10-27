@@ -1,0 +1,22 @@
+//문제점이 두가지 있는데
+//소수 외에 9, 15, 21, 25, 등의 숫자가 출력되고 있음
+//소수 2를 출력하지 않음.
+
+
+var id = prompt("숫자를 입력하세요.")
+
+for(var a=2 ; a<=id ; a++){
+  for(var i=1 ; i<=a ; i++){
+					if(id>2&&(i==1 || i==a)){
+						continue;
+
+					}else if(a%i==0){
+
+					}else{
+
+						console.log(a);
+						break;
+					}
+				}	
+
+			}
