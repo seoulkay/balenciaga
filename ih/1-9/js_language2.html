@@ -1,1 +1,117 @@
 
+<script>
+//함수
+prime(20);
+console.log(a);
+
+var a = 10;
+
+var b = [10, 20, 50];
+console.log(b[0])
+
+
+var news = ["국민", "이데일리", "ytn"];
+
+for(var i=0; i < news.length ;i++ ){
+	console.log(news[i]);
+}
+
+//객체는 아트리뷰트(속성)와 메소드(행동)의 집합이다.
+//자동차(객체) 객체 지향 프로그래밍! OOP
+//색깔(속성)
+//기름레벨(속성)
+//문짝수(속성)
+//앞으로가기(행동)
+//뒤로가기(행동)
+//주차하기(행동)
+var carColor = "red";
+
+var password = "23232";
+
+//var 존나갠적인사진 ="cdca2cd92,cdiu3md93mcdoerm2dkssandnckdalncdlankdvndakl0kd20kekfodsmaol"
+
+//!보안!
+
+//car.red()
+//"rjekalm1;m23k21;cred"
+
+var car = {
+	'color' : "red",
+	'oil'	: 50,
+	'door'	: 4,
+	'parked': true,
+	'forward' : function(){
+		console.log("앞으로 가니 신난다");
+		this.parked = false;
+		this.oil -= 5; 
+	},
+	'backward' : function(){
+		console.log("뒤로 갈떄도 있지");
+		this.parked = false;
+		this.oil -= 2;
+	},
+	'parking' : function(){
+		console.log("주차하기");
+		this.parked = true;
+	}
+}
+
+
+
+console.log(car.color);
+car.forward();
+console.log(car.parked);
+console.log(car.oil);
+
+
+
+//파라미터, 아규먼트 
+function prime(input){
+var result = ["2"]; //input 1? 버그// 좋은굿
+for (var i = 3; i <= input; i++){
+        //console.log("지금"+i+"를 넣는다");//베리굿 디버깅
+        result.push(" "+i);
+        //푸쉬 팝 -> 스택 
+    for (var j = 2; j < i; j++){
+        //console.log("지금 i ="+i+"지금 j ="+j);
+        if(i%j==0){
+            //console.log("지금"+i+"를 뺀다");
+            result.pop(i);
+            //console.log("야호");
+            break;
+        } 
+    }
+}
+//console.log(result.join(''));
+// ㄴr는 ㄱr끔 눈물을 흘린다..
+//리턴값!
+return result;
+}
+
+
+
+//생성자 contructor
+class Table {
+  constructor() {
+    this.name = '하얀네발테이블'; //속성
+  }
+  lift(){
+  	console.log("테이블이 올라간다"); //메소드 행동
+  }
+  nameChange(newName){
+  	this.name = newName;
+  }
+}
+
+const table1 = new Table();
+
+console.log(table1.name);
+table1.lift();
+table1.name = "나의 하얀네발테이블";
+table1.nameChange("나의 검정 테이블");
+console.log(table1.name);
+
+
+
+
+</script>
