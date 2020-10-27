@@ -1,1 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf_8'>
+	</head>
+	<body>
 
+	</body>
+
+
+	<script>
+		//함수
+
+
+
+		//배열
+
+		var news = ["국민", "이데일리", "ytn"];
+
+		for(var i=0; i<news.length; i++ ){
+			console.log(news[i]);
+		}
+
+		//객체
+
+		//객체는 아트리뷰트와 메소드의 집합이다.
+		//자동차(객체) 객체 지향 프로그래밍! OOP
+		//색깔(속성)
+		//기름레벨(속성)
+		//앞으로가기(행동)
+
+		var carColor = "red";
+
+
+
+		var car = {
+			'color' : "red",
+			'oil'   : 50,
+			'door'	: 4,
+			'parked': true,
+			'forward': function(){
+				console.log("앞으로 가니 신난다");
+				this.parked = false;
+				this.oil -= 5
+			},
+			'backward' : function () {
+				console.log("뒤로 갈때도 있지");
+				this.parked = false;
+				this.oil -= 2;
+			},
+			'parking' : function() {
+				console.log("주차하기");
+				this.parked = true
+			}
+
+		}
+
+		console.log(car.color);
+		car.forward();
+		console.log(car.parked);
+		console.log(car.oil);
+
+		//모듈
+
+//생성자 constructor
+
+class Table {
+	constructor() {
+		this.name = '하얀네발테이블'; //속성
+	}
+	lift(){
+		console.log("테이블이 올라간다") //메소드
+	}
+	nameChange(newName){
+		this.name = newName;
+	}
+}
+
+const table1 = new Table();
+
+console.log(table1.name);
+table1.lift();
+table1.name = "나의 하얀네발테이블";
+table1.nameChange("나의 검정 테이블");
+console.log(table1.name);
+
+	</script>
+</html>
