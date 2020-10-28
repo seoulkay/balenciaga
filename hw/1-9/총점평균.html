@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		function Total(){
+			var total = k+e+m;
+			return total;
+		}
+
+		function Average(){
+			var average = (k+e+m)/3;
+			return average.toFixed(1);
+		}
+
+		var personList = [];
+
+		class Person{
+			constructor(p1, p2, p3, p4, p5, p6){
+				this.name = p1;
+				this.kor = p2;
+				this.eng = p3;
+				this.math = p4;
+				this.total = p5;
+				this.average = p6;
+			}
+		}
+
+		while(true){
+
+			var n = prompt("학생 이름, 종료를 원하면 0을 입력"); 
+
+			if(n <= 0){
+				console.log("...조사종료...");
+				break;
+			}
+
+			var k = new Number(prompt("국어 점수",0));
+			var e = new Number(prompt("영어 점수",0));
+			var m = new Number(prompt("수학 점수",0));
+
+
+			var person1 = new Person(n, k, e, m, Total(), Average());
+			personList.push(person1);
+		}
+
+		console.log(personList);
+
+		//console.log("국어, 영어, 수학 점수를 차례로 입력하세요 : "+k+","+e+","+m+"\n"+"총점: "+Total()+"점"+"\n"+"평균: "+Average()+"점");
+
+
+
+	</script>
+
+</body>
+</html>
