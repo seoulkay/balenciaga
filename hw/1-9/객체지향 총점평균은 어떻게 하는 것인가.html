@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+
+    //뭔가 잘못 이해하는 듯... OTL....
+
+		var student = {
+			'korean' : 0,
+			'english' 	: 0,
+			'math'	: 0,
+
+			'scores'	: function(){
+				this.korean += prompt("국어 몇점 맞았니?");
+				this.english += prompt("영어 몇점 맞았니?");
+				this.math += prompt("수학은 몇점 맞았니?");
+
+				console.log('korean'+"점"+'english'+"점"+"math"+"점"+"..."+"몇 대 맞을래?");
+			},
+			'Total'	: function(){
+				var total = 'korean'+'english'+'math';
+				console.log("네 총점은 "+total+"점 이구나?");
+			},
+			'Avr'	: function(){
+				var avr = (korean+english+math)/3
+				console.log("세 과목 평균은"+avr+"점이고.");	
+			},
+			'Cheer'	: function(){
+				console.log("분발하거라.");
+			}
+		}
+
+		student.scores();
+		student.Total();
+		student.Avr();
+		student.Cheer();		
+		// console.log(car.parked);
+		// console.log(car.oil);
+
+
+
+
+	</script>
+
+
+</body>
+</html>
