@@ -6,22 +6,18 @@
 <body>
 	<script type="text/javascript">
 
-		//총점 구하는 함수
 		function Total(){
 			var total = k+e+m;
 			return total;
 		}
 
-		//평균 구하는 함수
 		function Average(){
 			var average = (k+e+m)/3;
 			return average.toFixed(1);
 		}
-		
-		//학생 여러명을 위해 배열을 만든다.
+
 		var personList = [];
 
-		//학생 정의. 이 부분 제대로 이해하지 못한 것 같음. 가져다가 썼음.
 		class Person{
 			constructor(p1, p2, p3, p4, p5, p6){
 				this.name = p1;
@@ -33,18 +29,15 @@
 			}
 		}
 
-		//배열에 학생이름, 과목 점수, 총점, 평균을 집어넣는 반복 로직
 		while(true){
 
 			var n = prompt("학생 이름, 종료를 원하면 0을 입력"); 
 
-			//0을 입력했을 때 반복 종료
-			if(n = 0){
-				console.log("...우리의 자랑스런 학생들입니다...");
+			if(n <= 0){
+				console.log("...조사종료...");
 				break;
 			}
 
-			//과목별 점수를 변수로 만듬. ?넘버로 지정 안하면 왜 문자로 받아들이는지 궁금... 
 			var k = new Number(prompt("국어 점수",0));
 			var e = new Number(prompt("영어 점수",0));
 			var m = new Number(prompt("수학 점수",0));
@@ -54,11 +47,18 @@
 			personList.push(person1);
 		}
 
-		//배열을 콘솔로그로 찍기
 		console.log(personList);
 
-		//원래 문제 답은 아래 비슷하게 출력하는 것인데, 학생을 여러 명으로 만들어놔서 변형해야함.. 
-		//console.log("국어, 영어, 수학 점수를 차례로 입력하세요 : "+k+","+e+","+m+"\n"+"총점: "+Total()+"점"+"\n"+"평균: "+Average()+"점");
+
+		//학급 평균이나 과목별 평균 같은 걸 구하고 싶어서 시작함.
+		//아래 학급 평균 로직에서 뭔가 문제가 생겼음..
+
+		// for(var i = 0; i<personList.length; i++){
+		// 	var classTotal = personList[i].total ++;			
+		// }
+		// var classAvr = classTotal/(personList.length*3);
+
+		// console.log("학급 평균 점수: "+classAvr+"점");
 
 
 
