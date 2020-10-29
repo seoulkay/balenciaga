@@ -47,20 +47,20 @@
 			var m = new Number(prompt("수학 점수",0));
 
 
-			var person1 = new Person(n, k, e, m, Total(), Average());
-			personList.push(person1);
+			var student1 = new Student(n, k, e, m, Total(), Average());
+			studentList.push(student1);
 		}
 
-		console.log(personList);
+		console.log(studentList);
 
 
 		//학급 평균이나 과목별 평균 같은 걸 구하고 싶어서 시작함.
 		//아래 학급 평균 로직에서 뭔가 문제가 생겼음..
 
-		// for(var i = 0; i<personList.length; i++){
-		// 	var classTotal = personList[i].total ++;			
+		// for(var i = 0; i<studentList.length; i++){
+		// 	var classTotal = studentList[i].total ++;			
 		// }
-		// var classAvr = classTotal/(personList.length*3);
+		// var classAvr = classTotal/(studentList.length*3);
 
 		// console.log("학급 평균 점수: "+classAvr+"점");
 
