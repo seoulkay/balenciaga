@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title></title>
-	</head>
-	<body>
+<head>
+	<title></title>
+</head>
+<body>
 	<script type="text/javascript">
-
+		
+		//이걸 객체 안에다가 못 넣었음
 		var k = new Number(prompt("국어 몇점 맞았니?"));
 		var e = new Number(prompt("영어 몇점 맞았니?"));
 		var m = new Number(prompt("수학 몇점 맞았니?"));
 
+		//객체 생성
 		var student = {
-			'korean' 	: "k",
-			'english' 	: "e",
-			'math'		: "m",
+			'korean' : "국어 "+k+"점",
+			'english' 	: "영어 "+e+"점",
+			'math'	: "수학 "+m+"점",
 
 			'Scores'	: function(){
 				//this.korean = k;
@@ -35,15 +37,21 @@
 			}
 		}
 
-		student.Scores();
-		student.Total();
-		student.Avr();
-		student.Cheer();
+		//개별 점수 조회
+		console.log(student.korean);
 
+		//점수 현황
+		student.Scores();
+		//총점
+		student.Total();
+		//평균
+		student.Avr();
+		//응원
+		student.Cheer();		
 
 
 	</script>
 
 
-	</body>
+</body>
 </html>
