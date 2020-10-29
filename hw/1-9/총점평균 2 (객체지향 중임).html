@@ -1,50 +1,49 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-</head>
-<body>
+	<head>
+		<title></title>
+	</head>
+	<body>
 	<script type="text/javascript">
 
-    //뭔가 잘못 이해하는 듯... OTL....
+		var k = new Number(prompt("국어 몇점 맞았니?"));
+		var e = new Number(prompt("영어 몇점 맞았니?"));
+		var m = new Number(prompt("수학 몇점 맞았니?"));
 
 		var student = {
-			'korean' : 0,
-			'english' 	: 0,
-			'math'	: 0,
+			'korean' 	: "k",
+			'english' 	: "e",
+			'math'		: "m",
 
-			'scores'	: function(){
-				this.korean += prompt("국어 몇점 맞았니?");
-				this.english += prompt("영어 몇점 맞았니?");
-				this.math += prompt("수학은 몇점 맞았니?");
+			'Scores'	: function(){
+				//this.korean = k;
+				//this.english = e;
+				//this.math = m;
 
-				console.log('korean'+"점"+'english'+"점"+"math"+"점"+"..."+"몇 대 맞을래?");
+				console.log("국영수 "+k+","+e+","+m+"점"+"...");
 			},
 			'Total'	: function(){
-				var total = 'korean'+'english'+'math';
-				console.log("네 총점은 "+total+"점 이구나?");
+				var total = k+e+m;
+				console.log("총점은 "+total+"점 이구나?");
 			},
 			'Avr'	: function(){
-				var avr = (korean+english+math)/3
-				console.log("세 과목 평균은"+avr+"점이고.");	
+				var avr = (k+e+m)/3
+				console.log("세 과목 평균은 "+avr.toFixed(1)+"점이고.");	
 			},
 			'Cheer'	: function(){
-				console.log("분발하거라.");
+				console.log("수고 많았다. 얼른 독서실 가렴.");
 			}
 		}
 
-		student.scores();
+		student.Scores();
 		student.Total();
 		student.Avr();
-		student.Cheer();		
-		// console.log(car.parked);
-		// console.log(car.oil);
-
+		student.Cheer();
 
 
 
 	</script>
 
 
-</body>
+	</body>
 </html>
