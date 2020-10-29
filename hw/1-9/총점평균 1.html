@@ -33,6 +33,7 @@
 			}
 		}
 
+		//여러 명의 학생 이름, 점수를 배열에 집어넣는 로직 
 		while(true){
 
 			var n = prompt("학생 이름, 종료를 원하면 0을 입력"); 
@@ -51,11 +52,12 @@
 			studentList.push(student1);
 		}
 
+		//배열을 출력
 		console.log(studentList);
 
 
-		//학급 평균이나 과목별 평균 같은 걸 구하고 싶어서 시작함.
-		//아래 학급 평균 로직에서 뭔가 문제가 생겼음..
+		//아래는 학급 평균이나 과목별 평균 같은 걸 구하고 싶어서 시작함.
+		//학급 평균 로직에서 뭔가 문제가 생겼음..
 
 		// for(var i = 0; i<studentList.length; i++){
 		// 	var classTotal = studentList[i].total ++;			
