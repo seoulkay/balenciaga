@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		//var person1 = new Person();
+
+		//var person1 = new Person(39, 180, "black");
+		//생성자, 어떤 걸 만들 때 꼭 집어넣어야하는 
+
+
+		function plus(p1,p2){
+			return p1+p2;
+		}
+		plus(1,2);
+
+
+		//window와 디스가 완벽히 같으면 다음을 글로 써라.
+		//this == 문맥상 이것
+		function func(){
+			if(window === this){
+				document.write("window === this");
+			}
+		}
+
+		func();
+		//this.close();
+		//window.close(); 와 같다.
+
+		function Func(){
+			document.write(this);
+		}
+		var o = new Func();
+
+
+		//상속
+
+/*		class 캐릭터	< 부모객체 parent
+		{
+			체력
+			힘
+			스피드
+		}
+
+		class 카즈야 캐릭터를 상속했다. < 자식객체 child
+		{
+			풍신권()
+			나락쓸기()
+			...
+		}
+
+		class 헤이아치 캐릭터를 상속했다.
+		{
+			뇌신권()
+			...
+		}		*/
+
+		//생성자
+		function Person(name){
+			this.name = name;
+		}
+
+		//var person = new Person();
+		//Person == class
+		//name 속성
+		Person.prototype.name = null;
+		//introduce 메소드
+		Person.prototype.introduce = function(){
+			return "My name is " + this.name;
+		}
+
+		//생성자
+		function Programmer(name){
+			this.name = name;
+		}
+		//프로그래머 클래스
+		//프로그래머는 사람이 가지고 있는 걸 다 가지고 있다.
+		//아래 부분이 상속이다.
+		Programmer.prototype = new Person();
+		var p1 = new Programmer("이일환");
+
+
+		document.write(p1.introduce()+"<br/>");
+
+		//결과는 My name is 이일환
+
+		//상속!!
+		//prototype!!
+
+		function Ultra(){}
+		Ultra.prototype.ultraProp = true;
+		 
+		function Super(){}
+		Super.prototype = new Ultra();
+		 
+		function Sub(){}
+		Sub.prototype = new Super();
+		 
+		var o = new Sub();
+		console.log(o.ultraProp);
+
+
+
+		//배열 확장
+		Array.prototype.rand = function(){
+    		var index = Math.floor(this.length*Math.random());
+   			return this[index];
+		}
+		var arr = new Array('seoul','new york','ladarkh','pusan', 'Tsukuba');
+		console.log(arr.rand());
+
+
+		//object
+
+		//wrapper 객체
+
+		//100 = 3비트
+		//10101010 8비트= 1바이트 알파벳 a-z까지 쓸 수 있다.
+		//한글은 1글자가 2바이트, 즉 16비트
+		//UTF-8이라는 규약은 1글자가 3바이트, 전세계 언어 가능
+
+		//var a = 4; //원시데이터
+		//var a = new Number(1);//wrapper객체
+
+		var a = 1;
+		var b = a;
+		b = 2;
+		console.log(a); // 1
+
+		//참조
+		var a = {'id':1};
+		var b = a;
+		b.id = 2;
+		console.log(a.id);  // 2
+
+		//패턴
+		//답이 없다  -> 어렵다. -> GOF 갱오프포 design pattern
+
+		//Singleton Pattern //객체를 하나만 만들게 하자!
+
+		//재귀함수는 팩토리얼 | 피보나치 수열 
+		//굳이 이걸로 안해도 됨
+		//꼭 쓰는 것 = 디렉토리 검색에 씀
+		//1-
+		//		2-
+		//			3-
+		//			4-
+		//		3-
+		//탈출조건이 있어야 함.
+
+		//function add(){
+		//	add();
+		//}
+
+		//add();
+		function factorial(num){
+			end_num = 1;
+			if(num == end_num){
+				document.write("앤드넘 "+end_num+" ");
+				return end_num
+
+			}else{
+				document.write("넘 "+num);
+				return num*factorial(num-1);
+			}
+		}
+
+		document.write(factorial(10));
+
+
+
+	</script>
+</body>
+</html>
