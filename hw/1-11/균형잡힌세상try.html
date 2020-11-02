@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+	<h1>균형잡힌 세상</h1>
+
+<script type="text/javascript">
+	
+	//문자를 입력받는다.
+	var n = new String(prompt("문자를 입력하시오.\(끝내려면 마침표\)"));
+
+	//마지막에 마침표를 찍어야지 결과 출력하는 로직
+	if(n.charAt(n.length-1)=="."){
+		alert("결과는 다음과 같습니다.");
+	}else{
+		alert("마지막에 마침표를 적으세요.");
+	}
+
+	//100글자 이내 조건
+	if(n.length > 100){
+		alert("100글자 이내의 글을 적으세요.");
+	}
+
+	//모든 괄호를 하나의 형상 "("" 으로 바꾸고 난 뒤
+	for(i=0; i<n.length; i++){
+		if(n.charAt([i])== ')' || n.charAt([i])== ']' || n.charAt([i])== '['){
+			n = n.replace(n.charAt([i]), '(');			
+		}
+	}
+
+	//match 함수는 해당하는 문자와 일치하는 결과를 찾아서 배열로 만들어준다고 함.
+	var r = n.match("(");
+
+	//총 "(" 개수를
+	//2로 나눴을 때 나머지가 0이면 TRUE, 1이면 FALSE를 출력시킨다.
+	
+	if((r.length)/2 ==0){
+		console.log("TRUE");		
+	}else{
+		console.log("FALSE");
+	}
+
+
+</script>
+
+</body>
+
+</html>
