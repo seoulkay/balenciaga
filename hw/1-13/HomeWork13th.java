@@ -1,30 +1,26 @@
-//아직 미완성 이것 밖에 못 했음
-
-//2개의 에러가 있음.
-//String cannot be converted to Integer
-//			Integer student = sc.nextLine();
-//			                             ^
-//2 errors
-
-
+//아직 미완성.. 이것 밖에 못 했음
+//에러가 많이 뜨고 있음.
 
 import java.util.Scanner;
 import java.util.ArrayList;
 
 public class HomeWork13th{
-	public static void main(Integer[] args){
+	public static void main(String[] args){
 		ArrayList<Integer> arrayList = new ArrayList<>();
 
 		Scanner sc = new Scanner(System.in);
 		System.out.println("점수를 입력하세요.");
 
-		while(student>=0){
-			Integer student = sc.nextLine();
-			arrayList.add(student);
+		//arrayList.add(student);
+
+		int s = sc.nextInt();
+
+		while(s>=0){
+		arrayList.add(s);
 		}
+
 		for(int i : arrayList){
 			System.out.println("점 : " + i);
 		}
 	}
 }
-
