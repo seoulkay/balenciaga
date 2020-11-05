@@ -1,5 +1,13 @@
 //시간이 없어서 이것 밖에 못함
 
+//2개의 에러가 있음.
+//String cannot be converted to Integer
+//			Integer student = sc.nextLine();
+//			                             ^
+//2 errors
+
+
+
 import java.util.Scanner;
 import java.util.ArrayList;
 
