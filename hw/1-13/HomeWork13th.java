@@ -8,11 +8,9 @@ public class HomeWork13th{
 	public static void main(String[] args){
 		ArrayList<Integer> arrayList = new ArrayList<>();
 
-		Scanner sc = new Scanner(System.in);
 		System.out.println("점수를 입력하세요.");
-
-		//arrayList.add(student);
-
+		
+		Scanner sc = new Scanner(System.in);
 		int s = sc.nextInt();
 
 		while(s>=0){
