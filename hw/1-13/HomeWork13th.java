@@ -1,4 +1,4 @@
-//시간이 없어서 이것 밖에 못함
+//아직 미완성 이것 밖에 못 했음
 
 //2개의 에러가 있음.
 //String cannot be converted to Integer
