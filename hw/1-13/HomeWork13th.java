@@ -18,7 +18,7 @@ public class HomeWork13th{
 		}
 
 		for(int i : arrayList){
-			System.out.println("점 : " + i);
+			System.out.println(i+"점"+\n");
 		}
 	}
 }
