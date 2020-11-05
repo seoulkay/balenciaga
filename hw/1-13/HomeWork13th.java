@@ -1,4 +1,4 @@
-//여기까지 밖에 아직 못함
+//시간이 없어서 이것 밖에 못함
 
 import java.util.Scanner;
 import java.util.ArrayList;
