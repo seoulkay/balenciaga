@@ -22,7 +22,7 @@ public class HomeWork13th{
 		for(int i : arrayList){
 			System.out.println("점수를 입력하세요 : " + i);
 		}
-		//의문점은 -1은 출력되지 않는데 어떻게 하면 표시할 수 있는지 아직 모르겠음.
+		//의문점은 음수값(ex. -1)은 출력되지 않는데 어떻게 하면 표시할 수 있는지 아직 모르겠음.
 		
 		//학생수와 성적을 출력
 		System.out.println("전체 학생은 " + arrayList.size()+" 명이다.");		
