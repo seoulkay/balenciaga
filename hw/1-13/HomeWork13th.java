@@ -3,23 +3,31 @@ import java.util.ArrayList;
 
 public class HomeWork13th{
 	public static void main(String[] args){
+		//빈 어레이리스트 만들기
 		ArrayList<Integer> arrayList = new ArrayList<>();
+		//점수를 입력받을 스캐너 정의하기 
 		Scanner sc = new Scanner(System.in);
-
+		
+		//점수를 반복해서 입력받는 로직
 		while(true){
 			System.out.println("점수를 입력하세요.");
 			int s = sc.nextInt();
 			if(s < 0){
-				break;
+				break;  //입력값이 음수면 반복 끝
 			}
-			arrayList.add(s);
+			arrayList.add(s); //입력값을 어레이리스트에 추가
 		}	
 		
+		//완성한 어레이리스트의 값들을 출력
 		for(int i : arrayList){
 			System.out.println("점수를 입력하세요 : " + i);
 		}
-
+		//의문점은 -1은 출력되지 않는데 어떻게 하면 표시할 수 있는지 아직 모르겠음.
+		
+		//학생수와 성적을 출력
 		System.out.println("전체 학생은 " + arrayList.size()+" 명이다.");		
+		
+		//한 줄 안에 배열 내용 출력
 		System.out.print("학생들의 성적 :  ");
 
 		for(int i = 0; i < arrayList.size(); i++){
