@@ -286,12 +286,60 @@
 		                    </div>
 		                </div>
 
-	                    <div class="row">
+	                    <div class="row"> <!--recommender -->
 		                    <div class="col-3">
-		                        <img src="resources/img_avatar.jpeg" alt="Avatar" width=35em style="border-radius: 50%;">
+		                        <img src="resources/${guest1.picture }" alt="Avatar" width=35em style="border-radius: 50%;">
 		                    </div>
 		                    <div class="col-7">
-		                        <strong>iseu2579</strong><br><span style="color:grey; font-size:1vw" >New to instagram</span>
+		                        <strong>${guest1.instaId }</strong><br><span style="color:grey; font-size:1vw" >${guest1.name }</span>
+		                    </div>
+		                    <div class="col-2">
+		                        <a href="www.tellmebaby.shop">Follow</a>
+		                    </div>
+	                    </div>
+	                    
+	                    <div class="row"> 
+		                    <div class="col-3">
+		                        <img src="resources/${guest2.picture }" alt="Avatar" width=35em style="border-radius: 50%;">
+		                    </div>
+		                    <div class="col-7">
+		                        <strong>${guest2.instaId }</strong><br><span style="color:grey; font-size:1vw" >${guest2.name }</span>
+		                    </div>
+		                    <div class="col-2">
+		                        <a href="www.tellmebaby.shop">Follow</a>
+		                    </div>
+	                    </div>
+	                    
+	                    <div class="row"> 
+		                    <div class="col-3">
+		                        <img src="resources/${guest3.picture }" alt="Avatar" width=35em style="border-radius: 50%;">
+		                    </div>
+		                    <div class="col-7">
+		                        <strong>${guest3.instaId }</strong><br><span style="color:grey; font-size:1vw" >${guest3.name }</span>
+		                    </div>
+		                    <div class="col-2">
+		                        <a href="www.tellmebaby.shop">Follow</a>
+		                    </div>
+	                    </div>
+	                    
+	                    <div class="row"> 
+		                    <div class="col-3">
+		                        <img src="resources/${guest4.picture }" alt="Avatar" width=35em style="border-radius: 50%;">
+		                    </div>
+		                    <div class="col-7">
+		                        <strong>${guest4.instaId }</strong><br><span style="color:grey; font-size:1vw" >${guest4.name }</span>
+		                    </div>
+		                    <div class="col-2">
+		                        <a href="www.tellmebaby.shop">Follow</a>
+		                    </div>
+	                    </div>
+	                    
+	                    <div class="row"> 
+		                    <div class="col-3">
+		                        <img src="resources/${guest5.picture }" alt="Avatar" width=35em style="border-radius: 50%;">
+		                    </div>
+		                    <div class="col-7">
+		                        <strong>${guest5.instaId }</strong><br><span style="color:grey; font-size:1vw" >${guest5.name }</span>
 		                    </div>
 		                    <div class="col-2">
 		                        <a href="www.tellmebaby.shop">Follow</a>
