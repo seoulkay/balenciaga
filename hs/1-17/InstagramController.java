@@ -138,17 +138,43 @@ public class HomeController {
 		postList.add(post1);
 		postList.add(post2);
 		postList.add(post3);
+		model.addAttribute("postList", postList);
 		
 		User me = new User();
 		me.setPicture("img_avatar.jpeg");
-		me.setInstaId("Tell");
-		me.setName("tell");
-		
+		me.setInstaId("TellMeBaby407");
+		me.setName("Tellmebaby");
 		model.addAttribute("me", me);
 		
-		model.addAttribute("postList", postList);
+		User guest1 = new User();
+		guest1.setPicture("img_guest1.png");
+		guest1.setInstaId("kayLee");
+		guest1.setName("회원님을 위한 추천");
+		model.addAttribute("guest1", guest1);
+
+		User guest2 = new User();
+		guest2.setPicture("img_guest2.png");
+		guest2.setInstaId("haewon__kim");
+		guest2.setName("인스타그램 추천");
+		model.addAttribute("guest2", guest2);
 		
+		User guest3 = new User();
+		guest3.setPicture("img_guest3.png");
+		guest3.setInstaId("hyukoofficial");
+		guest3.setName("인스타그램 추천");
+		model.addAttribute("guest3", guest3);
 		
+		User guest4 = new User();
+		guest4.setPicture("img_guest4.png");
+		guest4.setInstaId("Haewon");
+		guest4.setName("인스타그램 추천");
+		model.addAttribute("guest4", guest4);
+		
+		User guest5 = new User();
+		guest5.setPicture("img_guest5.png");
+		guest5.setInstaId("Haewon");
+		guest5.setName("인스타그램 추천");
+		model.addAttribute("guest5", guest5);
 		
 		//나의커스텀코드 끝!
 		return "home";
