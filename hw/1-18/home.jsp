@@ -360,6 +360,9 @@
 
     </div><!-- /.blog-main -->
 
+
+	<!-- 사이드바 시작  -->
+
     <aside class="col-md-4 blog-sidebar">
       <div class="p-4 mb-3 bg-light rounded">
 
@@ -503,6 +506,9 @@
         </ol>
       </div> -->
     </aside><!-- /.blog-sidebar -->
+    
+	<!-- 사이드바 끝   -->
+
 
   </div><!-- /.row -->
 
