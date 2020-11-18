@@ -278,13 +278,20 @@
 		                    </div>
 	                    </div>
 	                    </c:forEach>
-	                 
-                        <div class="row" style="margin-bottom:1em">
-	                        <div class="col-12" style="font-size:0.7vw;color:grey">
-	                            About - Help - Press - API - Jobs - Privacy - Teras <br>
-	                            Locations - Top Accounts - Hashtags - Language
-	                        </div>
+	                    
+	                    
+	                    <!-- 맨끝 링크들 시 -->
+	                    
+	                    
+                         <div class="row">
+                         <c:forEach items="${linkList }" var="li" begin="0">
+	                        <div class="col-2.4" style="color:grey; ">
+	                          <p><small><a href="${li.linkAddress }">${li.linkName }</a>-</small></p>
+	                          </div>
+	                          </c:forEach>
                          </div>
+                         
+                         
                         <div class="row" style="margin-bottom:1em">
 	                        <div class="col-12" style="font-size:0.7vw;color:grey">
 	                             @ 2020 INSTAGRAM FROM FACEBOOK
@@ -304,4 +311,3 @@
 </footer>
 </body>
 </html>
-
