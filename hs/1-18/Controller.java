@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import www.tellmebaby.shop.entity.Like;
+import www.tellmebaby.shop.entity.Link;
 import www.tellmebaby.shop.entity.Post;
 import www.tellmebaby.shop.entity.Reply;
 import www.tellmebaby.shop.entity.User;
@@ -135,9 +136,7 @@ public class HomeController {
 		post3.setReplyNumber(replyList3.size());
 		post3.setReplyList(replyList3);
 		
-		post1.setLikeInstaId(likeInstaIdCal(replyList1));
-		post2.setLikeInstaId(likeInstaIdCal(replyList2));
-		post3.setLikeInstaId(likeInstaIdCal(replyList3));
+		
 		
 		ArrayList<Post> postList = new ArrayList<Post>();
 		
@@ -204,10 +203,93 @@ public class HomeController {
 		like3.setInstaId("like3doer");
 		like3.setPostId(1);
 		
+		Like like4 = new Like();
+		like4.setCreate(new Date());
+		like4.setInstaId("like4doer");
+		like4.setPostId(3);
+		
+		Like like5 = new Like();
+		like5.setCreate(new Date());
+		like5.setInstaId("like5doer");
+		like5.setPostId(3);
+		
+		Like like6 = new Like();
+		like6.setCreate(new Date());
+		like6.setInstaId("like6doer");
+		like6.setPostId(3);
+		
 		ArrayList<Like> likeList = new ArrayList<Like>();
 		likeList.add(like1);
 		likeList.add(like2);
 		likeList.add(like3);
+		likeList.add(like4);
+		likeList.add(like5);
+		likeList.add(like6);
+		
+		post1.setLikeInstaId(likeInstaIdCal(likeList));
+		post2.setLikeInstaId(likeInstaIdCal(likeList));
+		post3.setLikeInstaId(likeInstaIdCal(likeList));
+		
+		
+		Link link1 = new Link();
+		link1.setLinkName("About");
+		link1.setLinkAddress("https://about.instagram.com/");
+		
+		Link link2 = new Link();
+		link2.setLinkName("Help");
+		link2.setLinkAddress("https://help.instagram.com/");
+		
+		
+		Link link3 = new Link();
+		link3.setLinkName("Press");
+		link3.setLinkAddress("https://about.instagram.com/ko-kr/blog");
+		
+		Link link4 = new Link();
+		link4.setLinkName("API");
+		link4.setLinkAddress("https://www.instagram.com/developer/");
+		
+		Link link5 = new Link();
+		link5.setLinkName("Help");
+		link5.setLinkAddress("https://www.instagram.com/about/jobs/");
+		
+		Link link6 = new Link();
+		link6.setLinkName("Privacy");
+		link6.setLinkAddress("https://help.instagram.com/");
+		
+		Link link7 = new Link();
+		link7.setLinkName("Terms");
+		link7.setLinkAddress("https://help.instagram.com/");
+		
+		Link link8 = new Link();
+		link8.setLinkName("Locations");
+		link8.setLinkAddress("https://www.instagram.com/explore/locations/");
+		
+		Link link9 = new Link();
+		link9.setLinkName("TopAccounts");
+		link9.setLinkAddress("https://www.instagram.com/directory/profiles/");
+		
+		Link link10 = new Link();
+		link10.setLinkName("Hashtags");
+		link10.setLinkAddress("https://www.instagram.com/directory/hashtags/");
+		
+		Link link11 = new Link();
+		link11.setLinkName("Language");
+		link11.setLinkAddress("https://help.instagram.com/");
+		
+		
+		ArrayList<Link> linkList = new ArrayList<Link>();
+		linkList.add(link1);
+		linkList.add(link2);
+		linkList.add(link3);
+		linkList.add(link4);
+		linkList.add(link5);
+		linkList.add(link6);
+		linkList.add(link7);
+		linkList.add(link8);
+		linkList.add(link9);
+		linkList.add(link10);
+		linkList.add(link11);
+		
 		
 		//라이크 리스트를 분류해서 포스트 리스트의 라이크리스트에 넣어줘야 되.
 		
@@ -232,11 +314,12 @@ public class HomeController {
 		
 		
 		//모델 보내는 부분
+		model.addAttribute("linkList", linkList );
 		model.addAttribute("studentList", studentList );
 		model.addAttribute("result", result );
-		model.addAttribute("postList", postList);
-		model.addAttribute("me", me);
-		model.addAttribute("guests", guests);
+		model.addAttribute("postList", postList );
+		model.addAttribute("me", me );
+		model.addAttribute("guests", guests );
 		//나의커스텀코드 끝!
 		return "home";
 	}
@@ -281,9 +364,14 @@ public class HomeController {
 	return agoResult;
 	}
 	//라이크 리스트에서 랜덤으로 아이디를 리턴하기 //TODO
-	public static String likeInstaIdCal(ArrayList<Reply> replyList) {
+	public static String likeInstaIdCal(ArrayList<Like> likeList) {
+	Random random = new Random();
+	Like pick = likeList.get(random.nextInt(likeList.size()));
+	return pick.getInstaId();
+	}
+	/*public static String likeInstaIdCal(ArrayList<Reply> replyList) {
 		Random random = new Random();
 		Reply pick = replyList.get(random.nextInt(replyList.size()));
 		return pick.getInstaId();
-	}
+	}*/
 }
