@@ -6,6 +6,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import www.tellmebaby.shop.entity.Reply;
+import www.tellmebaby.shop.entity.User;
 
 public class MySql {
 
@@ -17,7 +18,7 @@ public class MySql {
 	 
 	    String url = "jdbc:mysql://18.221.103.17:3306/";
 	    String id = "root";
-	    String pw = ###########;
+	    String pw = "kaykaykay";
 	 
 	    public MySql(){
 	 
@@ -52,6 +53,17 @@ public class MySql {
 	    		System.out.println("리플라이 글저장하다가 디베에서 에러났어요!");
 	    	}
 	    }
+	    
+	    public void insertLogin(String instaId, String name, String passWord) {
+	    	try {
+	    		stmt = con.createStatement();
+	    		
+	    		stmt.execute("INSERT INTO hong.login(instaId, name, passWord) Values (\""+instaId+"\", \""+name+"\", \""+passWord+"\");");
+	    		
+	    	}catch(Exception e) {
+	    		System.out.println("로긴페이지에서 글저장하다가 디비에서 에러났어요!");
+	    	}
+	    }
 	    //모든 리플라이를 가지고 오
 	    public ArrayList<Reply> getReplyList(){
 	    	ArrayList<Reply> replyList = new ArrayList<Reply>();
@@ -77,6 +89,33 @@ public class MySql {
 	    	return replyList;
 	    	
 	    }
+	    
+	    public ArrayList<User> getUserList(){
+	    	ArrayList<User> userList = new ArrayList<User>();
+	    	try {
+	    		stmt = con.createStatement();
+	            rs = stmt.executeQuery("SELECT * FROM hong.login");
+	            
+	            while(rs.next()) {
+	            	User user = new User();
+	            	user.setInstaId(rs.getString("instaId"));
+	            	user.setName(rs.getString("name"));
+	            	user.setPassWord(rs.getString("passWord"));
+	            	userList.add(user);
+	            
+	            }
+	    	}catch(Exception e) {
+	    		e.printStackTrace();
+	    		System.out.println("유저 글 가지고 오다가 디비에서 에러났어요!!");
+	    		
+	    	}
+	    	
+	    	
+	    	return userList;
+	    	
+	    }
+	    
+	    
 	    public void getData(){
 	 
 	        try{
