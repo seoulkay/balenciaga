@@ -18,7 +18,7 @@ public class MySql {
 	 
 	    String url = "jdbc:mysql://18.221.103.17:3306/";
 	    String id = "root";
-	    String pw = "kaykaykay";
+	    String pw = "************";
 	 
 	    public MySql(){
 	 
