@@ -27,6 +27,47 @@ public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
+	
+	
+	//겟으로 /loginInput이 왔을때 login.jsp로 가주세요.
+	@RequestMapping(value = "/loginInput", method = RequestMethod.GET)
+	public String loginInput(Locale locale, Model model, String instaId, String name, String passWord) {
+		//System.out.println(userName);
+		//loginList.add(userName);
+		
+		//디비 객체 만들기 
+		MySql mysql = new MySql();
+		
+		//디비 커넥션 만들기 
+		mysql.getConnection();
+		//디비에 리플라이 넣기
+		mysql.insertLogin(instaId, name, passWord);
+		
+		//디비에서 모든걸 가지고 오기 
+		ArrayList<User> userList = mysql.getUserList();
+		//디비 커넥션 끄기 
+		mysql.closeConnection();
+		
+		model.addAttribute("userList", userList);
+		return "login";
+	}
+	
+	//겟으로 /loginPage에 왔을때 loginPage.jsp로 가주세요
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String loginPage(Locale locale, Model model) {
+		//디비객체 만들
+		MySql mysql = new MySql();
+		//디비 커넥션 만들
+		mysql.getConnection();
+		//디비에서 리플라이 가지고 오
+		ArrayList<User>userList = mysql.getUserList();
+		//디비 커넥션 끄
+		mysql.getData();
+		mysql.closeConnection();
+		
+		model.addAttribute("userList", userList);
+		return "login";
+	}
 
 	
 	//겟으로 /messageInput이 왔을때 message.jsp로 가주세요.
@@ -424,4 +465,3 @@ public class HomeController {
 		return pick.getInstaId();
 	}*/
 }
-
