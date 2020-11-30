@@ -1,0 +1,7 @@
+친구페이지 입니다.
+아이디Chingoo5
+사진Chingo3.png <- 하드코딩 제거
+본명 친구3 <- 하드코딩 제거 
+
+User 객체 써서!!
+http://localhost:8080/shop/member?instaId=chingoo3&realName=chingu&avatar=1.png
