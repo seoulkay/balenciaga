@@ -1,0 +1,62 @@
+/member?instaId=chingu1 (GET)
+
+1 단계
+디비 연결해서
+instaId 가 chingu1인 자료를 뽑아와서 
+리절트셋에 넣기.
+
+요거가 확인 코드!
+System.out.println(rs.getString("realName"))
+
+2 단계
+유저 객체를 하나 생성해서
+리절트셋에서 뽑아서 유저 객체에 넣어주기
+
+System.out.println(user.getRealName());
+
+3단계
+함수 리턴을 유저로 해서
+콘트롤러에서 유저객체를 볼수있게 하기
+	
+확인코드! ->콘트롤러에서
+System.out.println(user.getRealName());
+
+4 단계
+이 유저를 JSP(뷰)에 모델로 전달해서 
+
+멤버페이지 입니다.
+인스타아이디는 instatad222
+아바타는 1.png
+실명은 이일환
+
+ 
+
+/post?postId=1
+
+포스트 상세 페이지 입니다.
+1
+
+
+/postForm (GET)
+
+postForm JSP로 가면
+
+포스트 입력 페이지 입니다.
+
+폼
+사진 : text
+인스타아이디 : text
+본문 : text 
+
+/postFormAction (POST)
+
+디비 생성하고
+사진, 인스타아이디, 본문을 디비에 넣고
+
+지금시간 넣는 sql.
+INSERT INTO kay.Post(create, instaId….) VALUES (now(), …..);
+
+/postForm으로 리다이렉트
+
+
+
