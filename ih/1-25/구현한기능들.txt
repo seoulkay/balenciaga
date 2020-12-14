@@ -1,0 +1,54 @@
+포스트 다보이는 페이지
+
+검색(name=search) text input <검색하기>
+1.
+2.
+3.
+4.
+5.
+
+
+콘트롤러에서
+String search 파라미터(인자)
+
+만약에 search.empty()
+	그냥 하던거 하면되고
+아닐경우에는 
+	검색을 해서 포스트를 보여줘
+
+
+포스트 다보이는 페이지
+
+검색(name=search) text input <검색하기>
+-내가 검색한것이 무엇인지 보이게
+1.
+2.
+3.
+4.
+5.
+
+댓글
+
+포스트 하나 보는 페이지 CREATE 생성 페이지를 만듭시다!
+
+//id int ai NN pk
+아이디 text name=userId
+내용 text name=description
+//시간 text now() 예는 인풋이 아님 created
+포스트아이디 hidden name=postId
+//뎃글아이디 replyId 널가능
+<댓글쓰기> 버튼
+
+
+포스트 하나 보는 페이지에서 댓글도 보여주기
+
+“replyList”  
+
+댓글 업데이트
+
+댓글 삭제
+
+이일환 맛없어요 2020.12.15 <수정> <삭제>
+
+<수정을 누를시> 댓글수정페이지 -> 리다렉을 다시 그 포스트로!
+<삭제> 걍삭제
