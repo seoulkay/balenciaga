@@ -1,0 +1,56 @@
+21글
+
+이일환홍성1111 dkdkdk홍성1111
+글쓴이 
+내용
+hidden/ id =15 -> replyId
+postId = 21
+
+가렌 댓글2
+글쓴이 
+내용
+hidden/ id =15 -> replyId
+postId = 21
+
+미스포츈 댓글삼단계입니다.
+글쓴이 
+내용
+hidden/ id =15 -> replyId
+postId = 21
+
+POST > REPLYLIST
+
+Post 안에 ArrayList<Reply>
+
+Post.java
+
+private replyList ArrayList<Reply>
+
+
+Controller
+
+post.setReplyList(replyList);
+
+Reply > ReplyList
+
+Reply arrayList<Reply>
+
+
+포스트아이디로 모든 댓글을 가지고와
+대댓글인 아이들은 빼서 댓글에 댓글리스트로 넣어줘야되.
+
+
+
+Post
+private int viewCount //조회수라는 속성
+
+처음 포스트를 작성할시 0
+
+특정 포스트를 클릭할시(post?id=11) 1이 올라감.
+	업데이트
+
+그리고 목표는 포스트 올 화면에서 조회수를 표시해주세요.
+
+
+
+
