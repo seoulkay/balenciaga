@@ -1,0 +1,75 @@
+currentPage 1
+
+5*5
+id 0 100 
+1 page 10 page
+
+1    10
+
+//첫 페이지의 내용을 보여줘
+SELECT * FROM hong.gesiPost order by id desc limit 5 offset 0;
+
+//첫 페이지의 첫id을 찾는 쿼리/ 첫페이지의 마지막id를 찾는 쿼리가 필요하다.
+
+SELECT count(*) as totalSize FROM hong.gesiPost WHERE id >= 처음아이디 AND id <= 마지막아이디;
+=> 25 
+
+
+
+110 게시물
+
+1 25
+2 25
+3 25
+4 25
+5 10
+
+한페이지 5 게시물
+한페이징 5 페이지 
+
+맥스 게시물의 개수는 25
+
+
+currentPage 0 => 5
+
+currentPage 1 => 5 0.20 ceil 1 * maxPager = 5
+ 
+currentPage 2 => 5 0.4 ceil 1
+
+currentPage 3 => 5 0.6 ceil 1
+
+currentPage 4 => 5 
+
+currentPage 5 => 5 
+
+currentPage 6 => 5 1.2 ceil 2 * maxPager = 10 - maxPager = 5 
+
+
+33 / 5 = 7; <-진리 마지막페이지! 
+
+//커런트 페이지를 넣으면 몇번째 페이지
+public int currentPagerCalculator(int currentPage, int maxPager){
+	int result = 0;
+
+	//블라블라블라
+
+	return result;
+}
+
+
+
+currentPage 11
+50 99
+11 page 20 page
+
+
+----
+새로운 시작 mybatis 마이바티스 게시판!
+
+
+
+
+
+
+
+
